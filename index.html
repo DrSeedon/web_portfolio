@@ -11,6 +11,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+    <div class="bg-animation"></div>
     <div class="cursor-glow"></div>
     
     <nav>
@@ -18,9 +19,9 @@
             <div class="logo">DrSeedon</div>
             <ul class="nav-links">
                 <li><a href="#about">Обо мне</a></li>
-                <li><a href="#jobs">Вакансии</a></li>
-                <li><a href="#features">Фичи</a></li>
-                <li><a href="#stack">Стек</a></li>
+                <li><a href="#experience">Опыт</a></li>
+                <li><a href="#competencies">Навыки</a></li>
+                <li><a href="#portfolio">Портфолио</a></li>
             </ul>
         </div>
     </nav>
@@ -28,128 +29,263 @@
     <header id="about" class="hero">
         <div class="container">
             <div class="hero-content reveal">
-                <div class="badge">Senior-level Unity Developer | AI Engineer</div>
+                <div class="badge">Senior Unity Developer | AI Engineer</div>
                 <h1>Максим <span class="highlight">Астраханцев</span></h1>
                 <p class="subtitle">Разработчик-универсал с 6-летним опытом. Делаю всё: от мобильных F2P хитов до нейросетевых систем. Решаю задачи, на которые другие тратят недели, за пару дней.</p>
                 <div class="cta-group">
-                    <a href="#jobs" class="btn primary">Что я ищу</a>
-                    <a href="https://t.me/DrSeedon" class="btn social-btn" target="_blank" title="Telegram"><i data-lucide="send"></i></a>
-                    <a href="https://www.linkedin.com/in/максим-астраханцев-13a9391b9/" class="btn social-btn" target="_blank" title="LinkedIn"><i data-lucide="linkedin"></i></a>
-                    <a href="https://docs.google.com/document/d/1c8FO_gRZ6CG_IhaKBdt5Eb4cWPRIhtct/edit?usp=sharing&ouid=104018051533755492019&rtpof=true&sd=true" class="btn social-btn" target="_blank" title="Full Portfolio"><i data-lucide="file-text"></i></a>
+                    <a href="#experience" class="btn primary">Что я ищу</a>
+                    <div class="social-links-row">
+                        <a href="https://t.me/DrSeedon" class="btn social-btn" target="_blank" title="Telegram"><i data-lucide="send"></i></a>
+                        <a href="https://www.linkedin.com/in/максим-астраханцев-13a9391b9/" class="btn social-btn" target="_blank" title="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="https://docs.google.com/document/d/1c8FO_gRZ6CG_IhaKBdt5Eb4cWPRIhtct/edit?usp=sharing&ouid=104018051533755492019&rtpof=true&sd=true" class="btn social-btn" target="_blank" title="Full Portfolio"><i data-lucide="file-text"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="jobs" class="section">
+    <section id="experience" class="section">
         <div class="container">
-            <h2 class="reveal">🚀 Идеальные вакансии</h2>
-            <div class="grid jobs-grid">
-                <div class="card reveal">
-                    <i data-lucide="gamepad-2"></i>
-                    <h3>Unity Developer</h3>
-                    <p>Middle+/Senior: Сложные механики, Zenject, оптимизация.</p>
+            <h2 class="reveal">💼 Опыт работы</h2>
+            <div class="experience-timeline reveal">
+                <div class="timeline-item">
+                    <div class="time">2023 — Наст. время</div>
+                    <div class="details">
+                        <h3>Freelance Developer</h3>
+                        <p>Unity, Python, AI, Web-servers. Разработка сложных систем и игровых механик.</p>
+                    </div>
                 </div>
-                <div class="card reveal">
-                    <i data-lucide="layout"></i>
-                    <h3>Game Designer</h3>
-                    <p>Баланс экономики, метрики, F2P монетизация.</p>
+                <div class="timeline-item">
+                    <div class="time">2022 — 2023</div>
+                    <div class="details">
+                        <h3>ITEO</h3>
+                        <p>Unity Developer. Разработка игрового ПО и интерактивных приложений.</p>
+                    </div>
                 </div>
-                <div class="card reveal">
+            </div>
+        </div>
+    </section>
+
+    <section id="competencies" class="section alt-bg">
+        <div class="container">
+            <h2 class="reveal">🧠 Навыки и Компетенции</h2>
+            <div class="competencies-grid">
+                <div class="comp-card reveal">
+                    <i data-lucide="monitor"></i>
+                    <h3>Разработка ПО</h3>
+                    <p>Игры, интерактивные приложения на ПК, Android и iOS.</p>
+                </div>
+                <div class="comp-card reveal">
+                    <i data-lucide="target"></i>
+                    <h3>Game Design</h3>
+                    <p>Балансировка экономики, F2P монетизация, data-driven дизайн, работа с метриками (ROAS, CPI, retention).</p>
+                </div>
+                <div class="comp-card reveal">
+                    <i data-lucide="globe"></i>
+                    <h3>Веб & Хостинг</h3>
+                    <p>Развертывание серверов, работа с зарубежным хостингом.</p>
+                </div>
+                <div class="comp-card reveal">
+                    <i data-lucide="database"></i>
+                    <h3>Data Analysis</h3>
+                    <p>Парсинг, обработка данных любой сложности, нейросетевые методы.</p>
+                </div>
+                <div class="comp-card reveal">
+                    <i data-lucide="brain"></i>
+                    <h3>AI / ML</h3>
+                    <p>LLM, FaceSwap, клонирование голоса, системы контроля на базе ИИ.</p>
+                </div>
+                <div class="comp-card reveal">
                     <i data-lucide="glasses"></i>
-                    <h3>VR/AR Lead</h3>
-                    <p>Иммерсивные решения, Hand Tracking, обучение.</p>
+                    <h3>VR / AR</h3>
+                    <p>Решения для планшетов (AR) и VR-очков (Quest/Foundation).</p>
                 </div>
-                <div class="card reveal">
-                    <i data-lucide="brain-circuit"></i>
-                    <h3>AI Architect</h3>
-                    <p>LLM, CV, генеративный ИИ в геймдеве и бизнесе.</p>
+                <div class="comp-card reveal">
+                    <i data-lucide="package-check"></i>
+                    <h3>Публикация</h3>
+                    <p>Опыт выкладки в Google Play и Яндекс Игры.</p>
                 </div>
-                <div class="card reveal">
-                    <i data-lucide="layers"></i>
-                    <h3>Full-stack</h3>
-                    <p>Unity + Python: Комплексные системы с ИИ-бэкендом.</p>
+                <div class="comp-card reveal">
+                    <i data-lucide="factory"></i>
+                    <h3>Промышленное ПО</h3>
+                    <p>Обучающие симуляторы (БПЛА), ПО для расчета данных.</p>
+                </div>
+                <div class="comp-card reveal">
+                    <i data-lucide="bitcoin"></i>
+                    <h3>Crypto</h3>
+                    <p>Торговые боты, бэктестинг, реальный трейдинг.</p>
+                </div>
+            </div>
+            
+            <div class="soft-skills reveal">
+                <h3>Soft Skills</h3>
+                <div class="soft-tags">
+                    <span>Решение сложных проблем</span>
+                    <span>Самостоятельность</span>
+                    <span>Обучаемость</span>
+                    <span>Работа в команде</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="features" class="section alt-bg">
+    <section id="portfolio" class="section">
         <div class="container">
-            <h2 class="reveal">🔥 Киллер-фичи</h2>
-            <div class="features-container">
-                <div class="feature-block reveal">
-                    <div class="feature-header">
-                        <i data-lucide="zap"></i>
-                        <h3>Unity & GameDev (God Mode)</h3>
+            <h2 class="reveal">🎨 Портфолио</h2>
+            <div class="portfolio-grid">
+                <!-- Slime Catcher -->
+                <div class="project-card reveal" data-project="slime_catcher">
+                    <div class="project-slider" data-folder="slime_catcher">
+                        <div class="slides">
+                            <img src="assets/images/portfolio/slime_catcher/1.jpg" onerror="this.src='https://placehold.co/600x400?text=Slime+Catcher'" alt="Slime Catcher">
+                        </div>
+                        <div class="slider-controls">
+                            <button class="prev-btn"><i data-lucide="chevron-left"></i></button>
+                            <button class="next-btn"><i data-lucide="chevron-right"></i></button>
+                        </div>
                     </div>
-                    <ul>
-                        <li><strong>Архитектура:</strong> Zenject (DI), UniTask, Events.</li>
-                        <li><strong>Платформы:</strong> Android, iOS, PC, WebGL, VR/AR.</li>
-                        <li><strong>VFX:</strong> Particle System, Shader Graph.</li>
-                        <li><strong>AI:</strong> ML-Agents, процедурная генерация.</li>
-                    </ul>
+                    <div class="project-info">
+                        <div class="project-year">2025</div>
+                        <h3>Slime Catcher - Farm Idle RPG</h3>
+                        <p class="project-desc">Мобильная idle/RPG. Баланс, AI слаймов, интеграция аналитики.</p>
+                        <div class="project-tags">
+                            <span>Unity 6</span><span>Zenject</span><span>AI</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://play.google.com/store/apps/details?id=com.multicast.slimecatcher" class="project-link" target="_blank">Google Play <i data-lucide="external-link"></i></a>
+                            <span class="view-details">Подробнее →</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- D&D System -->
+                <div class="project-card reveal" data-project="dnd_system">
+                    <div class="project-slider" data-folder="dnd_system">
+                        <div class="slides">
+                            <img src="assets/images/portfolio/dnd_system/1.jpg" onerror="this.src='https://placehold.co/600x400?text=D%26D+System'" alt="D&D System">
+                        </div>
+                        <div class="slider-controls">
+                            <button class="prev-btn"><i data-lucide="chevron-left"></i></button>
+                            <button class="next-btn"><i data-lucide="chevron-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-year">2025</div>
+                        <h3>D&D Session System</h3>
+                        <p class="project-desc">Дашборд для мастеров D&D. Двухоконный режим, физика кубиков.</p>
+                        <div class="project-tags">
+                            <span>Desktop</span><span>Unity</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="view-details">Подробнее →</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="feature-block reveal">
-                    <div class="feature-header">
-                        <i data-lucide="cpu"></i>
-                        <h3>AI & Next Gen</h3>
+                <!-- Tesla AR -->
+                <div class="project-card reveal" data-project="tesla">
+                    <div class="project-slider" data-folder="tesla">
+                        <div class="slides">
+                            <img src="assets/images/portfolio/tesla/1.jpg" onerror="this.src='https://placehold.co/600x400?text=Tesla+AR'" alt="Tesla AR">
+                        </div>
+                        <div class="slider-controls">
+                            <button class="prev-btn"><i data-lucide="chevron-left"></i></button>
+                            <button class="next-btn"><i data-lucide="chevron-right"></i></button>
+                        </div>
                     </div>
-                    <ul>
-                        <li><strong>LLM:</strong> ChatGPT/Llama integration.</li>
-                        <li><strong>CV:</strong> FaceSwap, ИИ-контроль.</li>
-                        <li><strong>Audio:</strong> Voice Cloning, TTS.</li>
-                        <li><strong>Mutation:</strong> Эволюционные нейросети.</li>
-                    </ul>
+                    <div class="project-info">
+                        <div class="project-year">2022</div>
+                        <h3>AR Tesla CyberTruck</h3>
+                        <p class="project-desc">Модель Tesla в AR с фото-функцией и трекингом окружения.</p>
+                        <div class="project-tags">
+                            <span>AR</span><span>Mobile</span>
+                        </div>
+                        <div class="card-footer">
+                            <span class="view-details">Подробнее →</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="feature-block reveal">
-                    <div class="feature-header">
-                        <i data-lucide="bar-chart-3"></i>
-                        <h3>Design & Analytics</h3>
+                <!-- IUH -->
+                <div class="project-card reveal" data-project="iuh">
+                    <div class="project-slider" data-folder="iuh">
+                        <div class="slides">
+                            <img src="assets/images/portfolio/iuh/1.jpg" onerror="this.src='https://placehold.co/600x400?text=IUH+Game'" alt="IUH">
+                        </div>
+                        <div class="slider-controls">
+                            <button class="prev-btn"><i data-lucide="chevron-left"></i></button>
+                            <button class="next-btn"><i data-lucide="chevron-right"></i></button>
+                        </div>
                     </div>
-                    <ul>
-                        <li><strong>Экономика:</strong> x16 баланс, симуляции.</li>
-                        <li><strong>Метрики:</strong> ROAS, CPI, Retention.</li>
-                        <li><strong>Монетизация:</strong> IAP, Ads, Подписки.</li>
-                    </ul>
-                </div>
-
-                <div class="feature-block reveal">
-                    <div class="feature-header">
-                        <i data-lucide="box"></i>
-                        <h3>VR/AR Immersive</h3>
+                    <div class="project-info">
+                        <div class="project-year">2020</div>
+                        <h3>IUH - 2D Platformer</h3>
+                        <p class="project-desc">Первый проект на Unity. 11 уровней, босс, мультиплеер.</p>
+                        <div class="project-tags">
+                            <span>2D</span><span>Multiplayer</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/DrSeedon/HUI" class="project-link" target="_blank">GitHub <i data-lucide="github"></i></a>
+                            <span class="view-details">Подробнее →</span>
+                        </div>
                     </div>
-                    <ul>
-                        <li><strong>B2B:</strong> Симуляторы БПЛА, стенды (Tele2).</li>
-                        <li><strong>AR:</strong> Tesla CyberTruck Social AR.</li>
-                        <li><strong>Interactions:</strong> Hand Tracking, физика.</li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="stack" class="section">
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <div class="modal-slides">
+                        <!-- Images will be injected here -->
+                    </div>
+                    <div class="modal-controls">
+                        <button id="modal-prev"><i data-lucide="chevron-left"></i></button>
+                        <button id="modal-next"><i data-lucide="chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="modal-details">
+                    <h2 id="modal-title">Project Title</h2>
+                    <div id="modal-year" class="project-year">2025</div>
+                    <div id="modal-tags" class="project-tags"></div>
+                    <div id="modal-full-desc" class="modal-text"></div>
+                    <div id="modal-links" class="modal-links"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="stack" class="section alt-bg">
         <div class="container">
             <h2 class="reveal">🛠️ Технологический стек</h2>
-            <div class="stack-grid reveal">
-                <div class="stack-category">
-                    <span>Core</span>
-                    <p>C#, Python, JavaScript</p>
+            <div class="stack-interactive reveal">
+                <div class="stack-item" title="C#">
+                    <i data-lucide="code-2"></i>
+                    <span>C#</span>
                 </div>
-                <div class="stack-category">
-                    <span>Engine</span>
-                    <p>Unity (all versions), NavMesh, Cinemachine</p>
+                <div class="stack-item" title="Unity">
+                    <i data-lucide="box"></i>
+                    <span>Unity</span>
                 </div>
-                <div class="stack-category">
-                    <span>Backend</span>
-                    <p>Python Servers, MySQL, REST, SQLite</p>
+                <div class="stack-item" title="Python">
+                    <i data-lucide="terminal"></i>
+                    <span>Python</span>
                 </div>
-                <div class="stack-category">
-                    <span>Tools</span>
-                    <p>Git, Blender, Photoshop, Adjust, AppMetrica</p>
+                <div class="stack-item" title="AI / ML">
+                    <i data-lucide="brain-circuit"></i>
+                    <span>AI/ML</span>
+                </div>
+                <div class="stack-item" title="VR/AR">
+                    <i data-lucide="glasses"></i>
+                    <span>VR/AR</span>
+                </div>
+                <div class="stack-item" title="Git">
+                    <i data-lucide="git-branch"></i>
+                    <span>Git</span>
                 </div>
             </div>
         </div>
