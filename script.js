@@ -1,125 +1,185 @@
-// Project Data for Modal
+// Project Data for Modal (images will be loaded automatically from manifest)
 const projectsData = {
     slime_catcher: {
         title: "Slime Catcher - Farm Idle RPG",
         year: "2025",
-        tags: ["Unity 6", "Zenject", "UniTask", "Game Design", "AI"],
-        desc: `Мобильная idle/RPG игра для Android с фокусом на коллекционирование и прогрессию. Проект разработан для F2P модели.
-        <br><br>
-        <b>Реализовано:</b>
-        <ul>
-            <li>Core loop: ловля слаймов → загоны → производство → апгрейды.</li>
-            <li>Симуляционная модель экономики в коде для тестирования баланса.</li>
-            <li>NavMesh AI для слаймов: обход препятствий, патрулирование.</li>
-            <li>Интеграция аналитики: Adjust, AppMetrica, Facebook SDK.</li>
-        </ul>`,
-        images: ["1.jpg", "2.jpg", "3.jpg"],
-        links: [
-            { text: "Google Play", url: "https://play.google.com/store/apps/details?id=com.multicast.slimecatcher", icon: "external-link" }
-        ]
+        tags: ["Unity 6", "Zenject", "AI", "Economy"],
+        desc: "Мобильная idle/RPG про ловлю слаймов. Полный цикл разработки: от математической модели экономики до NavMesh AI.",
+        links: [{ text: "Google Play", url: "https://play.google.com/store/apps/details?id=com.multicast.slimecatcher", icon: "external-link" }],
+        images: []
     },
     dnd_system: {
         title: "D&D Offline Session System",
         year: "2025",
-        tags: ["Desktop", "Unity", "Zenject", "UI/UX"],
-        desc: `Десктопное приложение для проведения оффлайн сессий D&D. Позволяет мастеру транслировать контент на второй экран игрокам.
-        <br><br>
-        <b>Фичи:</b>
-        <ul>
-            <li>Двухоконный режим: Мастер (контроль) и Игроки (трансляция).</li>
-            <li>Физика кубиков (D4-D20) с физическим разбросом.</li>
-            <li>Аудиосистема: управление фоновой музыкой и эффектами.</li>
-            <li>Система сохранения проектов в формате .dnd.</li>
-        </ul>`,
-        images: ["1.jpg", "2.jpg"],
-        links: []
+        tags: ["Desktop", "Unity", "Zenject"],
+        desc: "Профессиональный дашборд для мастеров D&D. Система трансляции контента, физика кубиков и менеджмент персонажей.",
+        links: [],
+        images: []
     },
     tesla: {
         title: "AR Tesla CyberTruck",
         year: "2022",
-        tags: ["AR Foundation", "Unity", "Mobile"],
-        desc: `Приложение дополненной реальности для визуализации Tesla CyberTruck.
-        <br><br>
-        <b>Реализовано:</b>
-        <ul>
-            <li>Трекинг окружения и меток.</li>
-            <li>Возможность заглянуть внутрь машины, менять размер.</li>
-            <li>Функция фото и выкладывания в альбом ВКонтакте.</li>
-        </ul>`,
-        images: ["1.jpg"],
-        links: []
+        tags: ["AR", "Mobile", "Social"],
+        desc: "Иммерсивный AR-опыт с Tesla CyberTruck. Фото-фичи, трекинг окружения и интеграция с соцсетями.",
+        links: [],
+        images: []
     },
     iuh: {
         title: "IUH - 2D Platformer",
         year: "2020",
-        tags: ["2D", "Unity", "Multiplayer", "Physics"],
-        desc: `Мой первый серьезный проект на Unity. 2D платформер с уникальными механиками на каждом уровне.
-        <br><br>
-        <b>Фичи:</b>
-        <ul>
-            <li>Босс с 3 стадиями поведения.</li>
-            <li>Процедурная генерация уровней.</li>
-            <li>Сетевая игра.</li>
-            <li>Управляемый автомобиль с физикой.</li>
-        </ul>`,
-        images: ["1.jpg", "2.jpg"],
-        links: [
-            { text: "GitHub", url: "https://github.com/DrSeedon/HUI", icon: "github" }
-        ]
+        tags: ["2D", "Unity", "Multiplayer"],
+        desc: "Мой первый большой проект. 11 уровней с уникальными механиками, боссы и сетевой режим.",
+        links: [{ text: "GitHub", url: "https://github.com/DrSeedon/HUI", icon: "github" }],
+        images: []
+    },
+    neuronka: {
+        title: "Neuronka - Evolution Sim",
+        year: "2020",
+        tags: ["AI", "Neural Networks", "Simulation"],
+        desc: "Симулятор бактерий с собственными нейронными сетями. Мутации, естественный отбор и система Boids.",
+        links: [],
+        images: []
+    },
+    polus: {
+        title: "POLUS - Survival Sandbox",
+        year: "2021",
+        tags: ["3D", "Multiplayer", "Survival"],
+        desc: "Крупный пет-проект: песочница с выживанием, реалистичной физикой и процедурным миром.",
+        links: [{ text: "GitHub", url: "https://github.com/DrSeedon/POLUS", icon: "github" }],
+        images: []
+    },
+    drones: {
+        title: "Drone Assembly Simulator",
+        year: "2024",
+        tags: ["B2B", "Education", "3D"],
+        desc: "Обучающее ПО для сборки квадрокоптеров. Поэтапная сборка, PBR материалы и детальные 3D модели.",
+        links: [],
+        images: []
+    },
+    farm_game: {
+        title: "Farm Idle Tycoon",
+        year: "2022",
+        tags: ["Mobile", "Idle", "Optimization"],
+        desc: "Тайкун про молочную ферму. Интеграция AdAdjust, Facebook SDK и глубокая оптимизация под мобилки.",
+        links: [],
+        images: []
     }
 };
 
-// Initialize Lucide icons
-lucide.createIcons();
+let imagesManifest = {};
 
-// Cursor Effect (Rigid Glow)
-const glow = document.querySelector('.cursor-glow');
-document.addEventListener('mousemove', (e) => {
-    glow.style.left = e.clientX + 'px';
-    glow.style.top = e.clientY + 'px';
-});
+// Load image list generated by Python
+async function initApp() {
+    try {
+        const response = await fetch('assets/images_manifest.json');
+        imagesManifest = await response.json();
+        
+        // Inject image lists into projectsData
+        Object.keys(imagesManifest).forEach(key => {
+            if (projectsData[key]) {
+                projectsData[key].images = imagesManifest[key];
+            }
+        });
 
-// Typing Effect for Subtitle
-const subtitle = document.querySelector('.subtitle');
-const text = subtitle.innerText;
-subtitle.innerText = '';
-let i = 0;
-
-function typeWriter() {
-    if (i < text.length) {
-        subtitle.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 30);
+        // Setup UI
+        setupInitialImages();
+        setupSliders();
+        setupModals();
+    } catch (e) {
+        console.error("Manifest load failed. Run run_local.bat first.", e);
     }
 }
-// Start typing after reveal
-setTimeout(typeWriter, 1000);
+
+// Set first image for every card
+function setupInitialImages() {
+    document.querySelectorAll('.project-card').forEach(card => {
+        const id = card.dataset.project;
+        if (projectsData[id] && projectsData[id].images?.length) {
+            const img = card.querySelector('.slides img');
+            img.src = `assets/images/portfolio/${id}/${projectsData[id].images[0]}`;
+        }
+    });
+}
+
+// Main Slider Logic (for cards)
+function setupSliders() {
+    document.querySelectorAll('.project-slider').forEach(slider => {
+        const card = slider.closest('.project-card');
+        const id = card.dataset.project;
+        const data = projectsData[id];
+        if (!data || !data.images?.length) return;
+
+        let currentIdx = 0;
+        const imgElement = slider.querySelector('.slides img');
+
+        const update = () => {
+            imgElement.style.opacity = '0';
+            setTimeout(() => {
+                imgElement.src = `assets/images/portfolio/${id}/${data.images[currentIdx]}`;
+                imgElement.style.opacity = '1';
+            }, 200);
+        };
+
+        slider.querySelector('.prev-btn').onclick = (e) => {
+            e.stopPropagation();
+            currentIdx = (currentIdx > 0) ? currentIdx - 1 : data.images.length - 1;
+            update();
+        };
+
+        slider.querySelector('.next-btn').onclick = (e) => {
+            e.stopPropagation();
+            currentIdx = (currentIdx < data.images.length - 1) ? currentIdx + 1 : 0;
+            update();
+        };
+    });
+}
 
 // Modal Logic
 const modal = document.getElementById('project-modal');
-const closeModal = document.querySelector('.close-modal');
-let currentProject = null;
-let currentImgIdx = 0;
+let currentModalProj = null;
+let currentModalImgIdx = 0;
 
-function openProject(id) {
+function setupModals() {
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.onclick = (e) => {
+            if (e.target.closest('.slider-controls') || e.target.closest('.project-link')) return;
+            openModal(card.dataset.project);
+        };
+    });
+
+    document.querySelector('.close-modal').onclick = () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    };
+
+    document.getElementById('modal-prev').onclick = () => {
+        const imgs = projectsData[currentModalProj].images;
+        currentModalImgIdx = (currentModalImgIdx > 0) ? currentModalImgIdx - 1 : imgs.length - 1;
+        updateModalImage();
+    };
+
+    document.getElementById('modal-next').onclick = () => {
+        const imgs = projectsData[currentModalProj].images;
+        currentModalImgIdx = (currentModalImgIdx < imgs.length - 1) ? currentModalImgIdx + 1 : 0;
+        updateModalImage();
+    };
+}
+
+function openModal(id) {
     const data = projectsData[id];
     if (!data) return;
-    
-    currentProject = id;
-    currentImgIdx = 0;
-    
+
+    currentModalProj = id;
+    currentModalImgIdx = 0;
+
     document.getElementById('modal-title').innerText = data.title;
     document.getElementById('modal-year').innerText = data.year;
     document.getElementById('modal-full-desc').innerHTML = data.desc;
-    
-    const tagsCont = document.getElementById('modal-tags');
-    tagsCont.innerHTML = data.tags.map(t => `<span>${t}</span>`).join('');
-    
-    const linksCont = document.getElementById('modal-links');
-    linksCont.innerHTML = data.links.map(l => 
+    document.getElementById('modal-tags').innerHTML = data.tags.map(t => `<span>${t}</span>`).join('');
+    document.getElementById('modal-links').innerHTML = (data.links || []).map(l => 
         `<a href="${l.url}" class="btn primary" target="_blank">${l.text} <i data-lucide="${l.icon}"></i></a>`
     ).join('');
-    
+
     updateModalImage();
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
@@ -127,94 +187,53 @@ function openProject(id) {
 }
 
 function updateModalImage() {
-    const data = projectsData[currentProject];
-    const slidesCont = document.querySelector('.modal-slides');
-    const imgName = data.images[currentImgIdx];
-    slidesCont.innerHTML = `<img src="assets/images/portfolio/${currentProject}/${imgName}" onerror="this.src='https://placehold.co/800x600?text=${data.title}'">`;
+    const data = projectsData[currentModalProj];
+    if (!data.images?.length) return;
+    const cont = document.querySelector('.modal-slides');
+    cont.innerHTML = `<img src="assets/images/portfolio/${currentModalProj}/${data.images[currentModalImgIdx]}">`;
 }
 
-// Global modal trigger for cards
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('click', (e) => {
-        // Don't open modal if clicking on controls or links
-        if (e.target.closest('.slider-controls') || e.target.closest('.project-link')) {
-            return;
-        }
-        openProject(card.dataset.project);
-    });
+// Background & UI Utilities
+lucide.createIcons();
+
+const glow = document.querySelector('.cursor-glow');
+document.addEventListener('mousemove', (e) => {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
 });
 
-closeModal.onclick = () => {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-};
+const subtitle = document.querySelector('.subtitle');
+const subText = subtitle.innerText;
+subtitle.innerText = '';
+let charIdx = 0;
+function typeWriter() {
+    if (charIdx < subText.length) {
+        subtitle.innerHTML += subText.charAt(charIdx);
+        charIdx++;
+        setTimeout(typeWriter, 30);
+    }
+}
+setTimeout(typeWriter, 1000);
 
-window.onclick = (e) => {
-    if (e.target == modal) closeModal.onclick();
-};
-
-document.getElementById('modal-prev').onclick = () => {
-    const data = projectsData[currentProject];
-    currentImgIdx = (currentImgIdx > 0) ? currentImgIdx - 1 : data.images.length - 1;
-    updateModalImage();
-};
-
-document.getElementById('modal-next').onclick = () => {
-    const data = projectsData[currentProject];
-    currentImgIdx = (currentImgIdx < data.images.length - 1) ? currentImgIdx + 1 : 0;
-    updateModalImage();
-};
-
-// Card Internal Sliders
-document.querySelectorAll('.project-slider').forEach(slider => {
-    const slides = slider.querySelector('.slides img');
-    const folder = slider.parentElement.dataset.project;
-    let currentImg = 1;
-    const maxImgs = 3; 
-
-    const updateImage = () => {
-        slides.style.opacity = '0';
-        setTimeout(() => {
-            slides.src = `assets/images/portfolio/${folder}/${currentImg}.jpg`;
-            slides.style.opacity = '1';
-        }, 200);
-    };
-
-    slider.querySelector('.prev-btn').addEventListener('click', (e) => {
-        e.stopPropagation();
-        currentImg = currentImg > 1 ? currentImg - 1 : maxImgs;
-        updateImage();
-    });
-
-    slider.querySelector('.next-btn').addEventListener('click', (e) => {
-        e.stopPropagation();
-        currentImg = currentImg < maxImgs ? currentImg + 1 : 1;
-        updateImage();
-    });
-});
-
-// Scroll Reveal
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('active');
     });
 }, { threshold: 0.1 });
-
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Nav transparency
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
     nav.style.background = window.scrollY > 50 ? 'rgba(10, 10, 12, 0.95)' : 'rgba(10, 10, 12, 0.7)';
 });
 
-// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
 });
+
+// Start the engine
+initApp();

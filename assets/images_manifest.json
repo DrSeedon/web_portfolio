@@ -1,0 +1,36 @@
+{
+    "dnd_system": [
+        "image31.jpg",
+        "image33.jpg"
+    ],
+    "drones": [
+        "image13.jpg",
+        "image2.png",
+        "image21.jpg"
+    ],
+    "farm_game": [
+        "image11.png"
+    ],
+    "iuh": [
+        "1.png",
+        "2.png",
+        "3.png"
+    ],
+    "neuronka": [
+        "image14.png",
+        "image4.jpg"
+    ],
+    "polus": [
+        "image25.jpg",
+        "image26.jpg",
+        "image28.jpg",
+        "image29.jpg"
+    ],
+    "slime_catcher": [
+        "image12.png"
+    ],
+    "tesla": [
+        "image30.jpg",
+        "image32.jpg"
+    ]
+}
