@@ -1,3 +1,12 @@
+import { projectsData } from './data.js';
+import { translations } from './translations.js';
+import { getCurrentLang, t } from './i18n.js';
+
+/**
+ * UTILS MODULE
+ * Encapsulates core UI logic and utility helpers
+ */
+
 export function setupTypewriter() {
     const subtitle = document.querySelector('.subtitle');
     const subText = subtitle ? subtitle.innerText : '';
@@ -23,7 +32,7 @@ export function setupObserver() {
     }, { threshold: 0.1 });
     
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    return observer; // Return if needed elsewhere
+    return observer;
 }
 
 export function setupCursor() {
@@ -35,7 +44,6 @@ export function setupCursor() {
         }
     });
     
-    // Add hover effect for buttons to make glow bigger/brighter
     const addHover = () => {
         document.querySelectorAll('.btn, .project-card, .comp-card, .timeline-item').forEach(el => {
             el.addEventListener('mouseenter', () => {
@@ -47,7 +55,109 @@ export function setupCursor() {
         });
     };
     addHover();
-    
-    // Export for dynamic elements
     window.refreshCursorHover = addHover;
+}
+
+/**
+ * REFACTORED COPY LOGIC
+ */
+function gatherResumeData() {
+    const lang = getCurrentLang();
+    const tr = translations[lang];
+    const name = document.querySelector('h1').innerText;
+    
+    let resume = `========================================\n`;
+    resume += `${name.toUpperCase()}\n`;
+    resume += `${tr.hero_badge}\n`;
+    resume += `========================================\n\n`;
+    
+    resume += `${tr.hero_subtitle}\n\n`;
+    
+    // Skills
+    resume += `[ ${tr.skills_title.toUpperCase()} ]\n`;
+    document.querySelectorAll('.comp-card').forEach(card => {
+        const title = card.querySelector('h3').innerText;
+        const desc = card.querySelector('p').innerText;
+        resume += `• ${title}: ${desc}\n`;
+    });
+    
+    // Experience
+    resume += `\n[ ${tr.exp_title.toUpperCase()} ]\n`;
+    document.querySelectorAll('.timeline-item').forEach(item => {
+        const time = item.querySelector('.time').innerText;
+        const title = item.querySelector('h3').innerText;
+        const desc = item.querySelector('p').innerText;
+        resume += `${time} | ${title}\n  ${desc}\n`;
+    });
+    
+    // Portfolio
+    resume += `\n[ ${tr.portfolio_title.toUpperCase()} ]\n`;
+    Object.values(projectsData).forEach(proj => {
+        const title = lang === 'en' ? proj.title_en : proj.title;
+        const desc = lang === 'en' ? proj.desc_en : proj.desc;
+        const tags = (lang === 'en' ? (proj.tags_en || proj.tags) : proj.tags).join(', ');
+        resume += `> ${proj.year} - ${title} [${tags}]\n  ${desc}\n`;
+    });
+    
+    // Contacts
+    resume += `\n[ CONTACTS ]\n`;
+    resume += `Telegram: https://t.me/DrSeedon\n`;
+    resume += `GitHub: https://github.com/DrSeedon\n`;
+    resume += `Email: maxim-as@bk.ru\n`;
+    resume += `LinkedIn: https://www.linkedin.com/in/максим-астраханцев-13a9391b9/\n`;
+    
+    return resume;
+}
+
+export function setupCopyButton() {
+    const btn = document.getElementById('copy-all-data');
+    const ghost = document.querySelector('.ghost-text');
+    let ghostTimeout;
+    let iconTimeout;
+
+    if (!btn) return;
+
+    btn.onclick = async () => {
+        const data = gatherResumeData();
+        
+        try {
+            // Priority 1: Modern Clipboard API
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                await navigator.clipboard.writeText(data);
+            } else {
+                // Priority 2: Fallback
+                const textArea = document.createElement("textarea");
+                textArea.value = data;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+            }
+
+            // GHOST TEXT RESTART LOGIC
+            if (ghost) {
+                clearTimeout(ghostTimeout);
+                ghost.classList.remove('active');
+                void ghost.offsetWidth; // Force reflow to restart CSS transition
+                ghost.classList.add('active');
+                ghostTimeout = setTimeout(() => ghost.classList.remove('active'), 2500);
+            }
+
+            // ICON RESTART LOGIC
+            const icon = btn.querySelector('i');
+            const originalIcon = icon.getAttribute('data-lucide');
+            
+            clearTimeout(iconTimeout);
+            icon.setAttribute('data-lucide', 'check');
+            lucide.createIcons();
+            
+            iconTimeout = setTimeout(() => {
+                icon.setAttribute('data-lucide', originalIcon);
+                lucide.createIcons();
+            }, 2000);
+
+        } catch (err) {
+            console.error('Copy failed:', err);
+        }
+    };
 }

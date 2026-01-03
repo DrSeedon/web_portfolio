@@ -11,34 +11,49 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <div class="bg-animation"></div>
+    <div class="bg-animation">
+        <div class="bg-animation-extra"></div>
+    </div>
     <div class="cursor-glow"></div>
     
     <nav>
         <div class="container">
             <div class="logo">DrSeedon</div>
             <ul class="nav-links">
-                <li><a href="#about">Обо мне</a></li>
-                <li><a href="#experience">Опыт</a></li>
-                <li><a href="#competencies">Навыки</a></li>
-                <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#about" data-i18n="nav_about">Обо мне</a></li>
+                <li><a href="#experience" data-i18n="nav_experience">Опыт</a></li>
+                <li><a href="#competencies" data-i18n="nav_competencies">Навыки</a></li>
+                <li><a href="#portfolio" data-i18n="nav_portfolio">Портфолио</a></li>
             </ul>
+            <div class="lang-switcher">
+                <div class="lang-toggle" id="lang-toggle">
+                    <div class="toggle-pill"></div>
+                    <span class="toggle-label ru" data-lang="ru">RU</span>
+                    <span class="toggle-label en" data-lang="en">EN</span>
+                </div>
+            </div>
         </div>
     </nav>
 
     <header id="about" class="hero">
         <div class="container">
             <div class="hero-content reveal">
-                <div class="badge">Senior Unity Developer | AI Engineer</div>
+                <div class="badge" data-i18n="hero_badge">Senior Unity Developer | AI Engineer</div>
                 <h1>Максим <span class="highlight">Астраханцев</span></h1>
-                <p class="subtitle">Разработчик-универсал с 6-летним опытом. Делаю всё: от мобильных F2P хитов до нейросетевых систем. Решаю задачи, на которые другие тратят недели, за пару дней.</p>
+                <p class="subtitle" data-i18n="hero_subtitle">Разработчик-универсал с 6-летним опытом. Делаю всё: от мобильных F2P хитов до нейросетевых систем. Решаю задачи, на которые другие тратят недели, за пару дней.</p>
                 <div class="cta-group">
-                    <a href="#interests" class="btn btn--primary">Что я ищу</a>
+                    <a href="#interests" class="btn btn--primary" data-i18n="hero_cta">Что я ищу</a>
                     <div class="social-links-row">
                         <a href="https://t.me/DrSeedon" class="btn btn--icon" target="_blank" title="Telegram"><i data-lucide="send"></i></a>
                         <a href="https://github.com/DrSeedon" class="btn btn--icon" target="_blank" title="GitHub"><i data-lucide="github"></i></a>
                         <a href="mailto:maxim-as@bk.ru" class="btn btn--icon" title="Email"><i data-lucide="mail"></i></a>
                         <a href="https://www.linkedin.com/in/максим-астраханцев-13a9391b9/" class="btn btn--icon" target="_blank" title="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    </div>
+                    <div class="copy-container">
+                        <button id="copy-all-data" class="btn btn--primary" title="Copy All Data" data-i18n-title="copy_all">
+                            <i data-lucide="copy"></i>
+                        </button>
+                        <span class="ghost-text" data-i18n="copy_success">Copied!</span>
                     </div>
                 </div>
             </div>
@@ -47,32 +62,32 @@
 
     <section id="interests" class="section">
         <div class="container">
-            <h2 class="reveal">🚀 Идеальные вакансии</h2>
+            <h2 class="reveal" data-i18n="interests_title">🚀 Идеальные вакансии</h2>
             <div class="interests-grid">
                 <div class="interest-card reveal">
                     <div class="interest-icon"><i data-lucide="gamepad-2"></i></div>
-                    <h3>Unity Developer</h3>
-                    <p>Middle+ / Senior. Сложные механики, Zenject, оптимизация.</p>
+                    <h3 data-i18n="int_unity_title">Unity Developer</h3>
+                    <p data-i18n="int_unity_desc">Middle+ / Senior. Сложные механики, Zenject, оптимизация.</p>
                 </div>
                 <div class="interest-card reveal">
                     <div class="interest-icon"><i data-lucide="layout-template"></i></div>
-                    <h3>Game Designer</h3>
-                    <p>System Designer. Баланс экономики, F2P монетизация, метрики.</p>
+                    <h3 data-i18n="int_gd_title">Game Designer</h3>
+                    <p data-i18n="int_gd_desc">System Designer. Балансировка экономики, F2P монетизация, метрики.</p>
                 </div>
                 <div class="interest-card reveal">
                     <div class="interest-icon"><i data-lucide="glasses"></i></div>
-                    <h3>VR/AR Lead</h3>
-                    <p>Иммерсивные решения, Hand Tracking, промышленное обучение.</p>
+                    <h3 data-i18n="int_vr_title">VR/AR Lead</h3>
+                    <p data-i18n="int_vr_desc">Иммерсивные решения, Hand Tracking, промышленное обучение.</p>
                 </div>
                 <div class="interest-card reveal">
                     <div class="interest-icon"><i data-lucide="cpu"></i></div>
-                    <h3>AI Architect</h3>
-                    <p>Интеграция LLM, Computer Vision в игровые и бизнес-процессы.</p>
+                    <h3 data-i18n="int_ai_title">AI Architect</h3>
+                    <p data-i18n="int_ai_desc">Интеграция LLM, Computer Vision в игровые и бизнес-процессы.</p>
                 </div>
                 <div class="interest-card reveal">
                     <div class="interest-icon"><i data-lucide="layers"></i></div>
-                    <h3>Full-stack Dev</h3>
-                    <p>Unity + Python. Комплексные системы с ИИ-бэкендом.</p>
+                    <h3 data-i18n="int_fs_title">Full-stack Dev</h3>
+                    <p data-i18n="int_fs_desc">Unity + Python. Комплексные системы с ИИ-бэкендом.</p>
                 </div>
             </div>
         </div>
@@ -80,20 +95,20 @@
 
     <section id="experience" class="section">
         <div class="container">
-            <h2 class="reveal">💼 Опыт работы</h2>
+            <h2 class="reveal" data-i18n="exp_title">💼 Опыт работы</h2>
             <div class="experience-timeline reveal">
                 <div class="timeline-item">
-                    <div class="time">2023 — Наст. время</div>
+                    <div class="time" data-i18n="exp_freelance_date">2023 — Наст. время</div>
                     <div class="details">
-                        <h3>Freelance Developer</h3>
-                        <p>Unity, Python, AI, Web-servers. Разработка сложных систем и игровых механик.</p>
+                        <h3 data-i18n="exp_freelance_title">Freelance Developer</h3>
+                        <p data-i18n="exp_freelance_desc">Unity, Python, AI, Web-servers. Разработка сложных систем и игровых механик.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="time">2022 — 2023</div>
+                    <div class="time" data-i18n="exp_iteo_date">2022 — 2023</div>
                     <div class="details">
-                        <h3>ITEO</h3>
-                        <p>Unity Developer. Разработка игрового ПО и интерактивных приложений.</p>
+                        <h3 data-i18n="exp_iteo_title">ITEO</h3>
+                        <p data-i18n="exp_iteo_desc">Unity Developer. Разработка игрового ПО и интерактивных приложений.</p>
                     </div>
                 </div>
             </div>
@@ -102,67 +117,67 @@
 
     <section id="competencies" class="section alt-bg">
         <div class="container">
-            <h2 class="reveal">🧠 Навыки и Компетенции</h2>
+            <h2 class="reveal" data-i18n="skills_title">🧠 Навыки и Компетенции</h2>
             <div class="competencies-grid">
                 <div class="comp-card reveal">
                     <i data-lucide="monitor"></i>
-                    <h3>Игровая Разработка</h3>
-                    <p>Мультиплеер, внутриигровые покупки (IAP), мобильные (Android, iOS) и ПК-игры.</p>
+                    <h3 data-i18n="skill_gamedev_title">Игровая Разработка</h3>
+                    <p data-i18n="skill_gamedev_desc">Мультиплеер, внутриигровые покупки (IAP), мобильные (Android, iOS) и ПК-игры.</p>
                 </div>
                 <div class="comp-card reveal">
                     <i data-lucide="sparkles"></i>
-                    <h3>Интерактивные Решения</h3>
-                    <p>Создание интерактивных стендов для музеев, форумов (КЭФ) и выставок.</p>
+                    <h3 data-i18n="skill_inter_title">Интерактивные Решения</h3>
+                    <p data-i18n="skill_inter_desc">Создание интерактивных стендов для музеев, форумов (КЭФ) и выставок.</p>
                 </div>
                 <div class="comp-card reveal">
                     <i data-lucide="target"></i>
-                    <h3>Game Design</h3>
-                    <p>Балансировка экономики, F2P монетизация, data-driven дизайн, работа с метриками (ROAS, CPI, retention).</p>
+                    <h3 data-i18n="skill_gd_title">Game Design</h3>
+                    <p data-i18n="skill_gd_desc">Балансировка экономики, F2P монетизация, data-driven дизайн, работа с метриками.</p>
                 </div>
                 <div class="comp-card reveal">
                     <i data-lucide="globe"></i>
-                    <h3>Веб & Хостинг</h3>
-                    <p>Развертывание серверов, работа с зарубежным хостингом.</p>
+                    <h3 data-i18n="skill_web_title">Веб & Хостинг</h3>
+                    <p data-i18n="skill_web_desc">Развертывание серверов, работа с зарубежным хостингом.</p>
                 </div>
                 <div class="comp-card reveal">
                     <i data-lucide="database"></i>
-                    <h3>Data Analysis</h3>
-                    <p>Парсинг, обработка данных любой сложности, нейросетевые методы.</p>
+                    <h3 data-i18n="skill_data_title">Data Analysis</h3>
+                    <p data-i18n="skill_data_desc">Парсинг, обработка данных любой сложности, нейросетевые методы.</p>
                 </div>
                 <div class="comp-card reveal">
                     <i data-lucide="brain"></i>
-                    <h3>AI / ML</h3>
-                    <p>LLM, FaceSwap, клонирование голоса, системы контроля на базе ИИ.</p>
+                    <h3 data-i18n="skill_ai_title">AI / ML</h3>
+                    <p data-i18n="skill_ai_desc">LLM, FaceSwap, клонирование голоса, системы контроля на базе ИИ.</p>
                 </div>
                 <div class="comp-card reveal">
                     <i data-lucide="glasses"></i>
-                    <h3>VR / AR</h3>
-                    <p>Решения для планшетов (AR) и VR-очков (Quest/Foundation).</p>
+                    <h3 data-i18n="skill_vr_title">VR / AR</h3>
+                    <p data-i18n="skill_vr_desc">Решения для планшетов (AR) и VR-очков (Quest/Foundation).</p>
                 </div>
                 <div class="comp-card reveal">
                     <i data-lucide="package-check"></i>
-                    <h3>Публикация</h3>
-                    <p>Опыт выкладки в Google Play и Яндекс Игры.</p>
+                    <h3 data-i18n="skill_pub_title">Публикация</h3>
+                    <p data-i18n="skill_pub_desc">Опыт выкладки в Google Play и Яндекс Игры.</p>
                 </div>
                 <div class="comp-card reveal">
                     <i data-lucide="factory"></i>
-                    <h3>Промышленное ПО</h3>
-                    <p>Обучающие симуляторы (БПЛА), ПО для расчета данных.</p>
+                    <h3 data-i18n="skill_ind_title">Промышленное ПО</h3>
+                    <p data-i18n="skill_ind_desc">Обучающие симуляторы (БПЛА), ПО для расчета данных.</p>
                 </div>
                 <div class="comp-card reveal">
                     <i data-lucide="bitcoin"></i>
-                    <h3>Crypto</h3>
-                    <p>Торговые боты, бэктестинг, реальный трейдинг.</p>
+                    <h3 data-i18n="skill_crypto_title">Crypto</h3>
+                    <p data-i18n="skill_crypto_desc">Торговые боты, бэктестинг, реальный трейдинг.</p>
                 </div>
             </div>
             
             <div class="soft-skills reveal">
-                <h3>Soft Skills</h3>
+                <h3 data-i18n="soft_title">Soft Skills</h3>
                 <div class="soft-tags">
-                    <span>Решение сложных проблем</span>
-                    <span>Самостоятельность</span>
-                    <span>Обучаемость</span>
-                    <span>Работа в команде</span>
+                    <span data-i18n="soft_1">Решение сложных проблем</span>
+                    <span data-i18n="soft_2">Самостоятельность</span>
+                    <span data-i18n="soft_3">Обучаемость</span>
+                    <span data-i18n="soft_4">Работа в команде</span>
                 </div>
             </div>
         </div>
@@ -170,30 +185,30 @@
 
     <section id="portfolio" class="section">
         <div class="container">
-            <h2 class="reveal">🎨 Избранные проекты</h2>
+            <h2 class="reveal" data-i18n="portfolio_title">🎨 Избранные проекты</h2>
             <div id="portfolio-grid" class="portfolio-grid">
                 <!-- Dynamically filled by JS -->
             </div>
             
             <div class="portfolio-footer reveal">
                 <button id="view-all-btn" class="btn btn--secondary">
-                    <i data-lucide="archive"></i> Все проекты (Архив)
+                    <i data-lucide="archive"></i> <span data-i18n="portfolio_view_all">Все проекты (Архив)</span>
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- Archive / Timeline View -->
-    <div id="archive-view" class="archive-overlay">
-        <div class="archive-header">
-            <div class="container">
-                <h2>🗄️ Архив всех проектов</h2>
-                <span class="close-archive">&times;</span>
+    <!-- Архив проектов -->
+    <div id="archive-modal" class="modal">
+        <div class="modal-content archive-modal-content">
+            <span class="close-modal close-archive">&times;</span>
+            <div class="modal-body archive-body">
+            <div class="archive-header">
+                <h2><span>🗄️</span> <span data-i18n="archive_title">Архив всех проектов</span></h2>
             </div>
-        </div>
-        <div class="container">
-            <div id="timeline-cont" class="timeline-container">
-                <!-- Timeline projects injected here -->
+                <div id="archive-list" class="archive-list">
+                    <!-- Сюда рендерятся все проекты -->
+                </div>
             </div>
         </div>
     </div>
@@ -207,17 +222,21 @@
                     <div class="modal-slides">
                         <!-- Images will be injected here -->
                     </div>
-                    <div class="modal-controls">
-                        <button id="modal-prev"><i data-lucide="chevron-left"></i></button>
-                        <button id="modal-next"><i data-lucide="chevron-right"></i></button>
-                    </div>
                 </div>
-                <div class="modal-details">
-                    <h2 id="modal-title">Project Title</h2>
+                <div class="modal-gallery-controls">
+                    <button id="modal-prev" class="btn btn--nav"><i data-lucide="chevron-left"></i></button>
+                    <button id="modal-next" class="btn btn--nav"><i data-lucide="chevron-right"></i></button>
+                </div>
+
+                <div class="modal-header-section">
                     <div id="modal-year" class="project-year">2025</div>
-                    <div id="modal-tags" class="project-tags"></div>
-                    <div id="modal-full-desc" class="modal-text"></div>
-                    <div id="modal-links" class="modal-links"></div>
+                    <h2 id="modal-title">Project Title</h2>
+                    
+                    <div class="modal-details">
+                        <div id="modal-full-desc" class="modal-text"></div>
+                        <div id="modal-tags" class="modal-tags"></div>
+                        <div id="modal-links" class="modal-links"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -225,7 +244,7 @@
 
     <section id="stack" class="section alt-bg">
         <div class="container">
-            <h2 class="reveal">🛠️ Технологический стек</h2>
+            <h2 class="reveal" data-i18n="stack_title">🛠️ Технологический стек</h2>
             <div class="stack-interactive reveal">
                 <div class="stack-item" title="C#">
                     <i data-lucide="code-2"></i>
@@ -263,7 +282,7 @@
                 <a href="mailto:maxim-as@bk.ru" title="Email"><i data-lucide="mail"></i></a>
                 <a href="https://www.linkedin.com/in/максим-астраханцев-13a9391b9/" target="_blank" title="LinkedIn"><i data-lucide="linkedin"></i></a>
             </div>
-            <p>&copy; 2025 DrSeedon. Сделано с любовью и нейронками.</p>
+            <p>&copy; 2025 DrSeedon</p>
         </div>
     </footer>
 

@@ -1,8 +1,10 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { 
+    scroll-behavior: smooth; 
+}
 
 body {
-    background-color: var(--bg-color);
+    background-color: transparent;
     color: var(--text-main);
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
@@ -58,6 +60,65 @@ nav .container {
 }
 
 .nav-links a:hover { color: var(--accent); }
+
+/* Language Toggle Switch */
+.lang-switcher {
+    margin-left: 2rem;
+}
+
+.lang-toggle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    padding: 4px;
+    cursor: pointer;
+    width: 90px;
+    height: 38px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    user-select: none;
+}
+
+.lang-toggle:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.toggle-pill {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    background: var(--accent);
+    border-radius: 100px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+}
+
+/* Position for EN */
+.lang-toggle.is-en .toggle-pill {
+    transform: translateX(40px);
+}
+
+.toggle-label {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--text-dim);
+    z-index: 1;
+    transition: all 0.3s;
+    pointer-events: none;
+}
+
+.lang-toggle .toggle-label.active {
+    color: white;
+}
+
+.lang-toggle.is-en .toggle-label.en { color: white; }
+.lang-toggle:not(.is-en) .toggle-label.ru { color: white; }
 
 /* Hero */
 .hero {

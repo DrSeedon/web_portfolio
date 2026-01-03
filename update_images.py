@@ -31,7 +31,7 @@ def update_manifest():
     with open(manifest_path, 'w', encoding='utf-8') as f:
         json.dump(manifest, f, indent=4, ensure_ascii=False)
 
-    print(f"✅ Manifest updated! Found {len(projects)} projects.")
+        print(f"DONE: Manifest updated! Found {len(projects)} projects.")
 
 if __name__ == "__main__":
     update_manifest()

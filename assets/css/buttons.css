@@ -86,3 +86,44 @@
 .modal-controls .btn--nav:hover {
     background: var(--accent);
 }
+
+/* Copy Button & Ghost Text */
+.copy-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+#copy-all-data {
+    padding: 0;
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.ghost-text {
+    position: absolute;
+    left: calc(100% + 15px);
+    white-space: nowrap;
+    color: var(--accent);
+    font-weight: 800;
+    font-family: 'JetBrains Mono', monospace;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 10;
+}
+
+.ghost-text.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}

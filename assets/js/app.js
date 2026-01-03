@@ -1,7 +1,8 @@
 import { projectsData } from './data.js';
 import { setupSliders } from './slider.js';
 import { setupModals } from './modal.js';
-import { setupTypewriter, setupObserver, setupCursor } from './utils.js';
+import { setupTypewriter, setupObserver, setupCursor, setupCopyButton } from './utils.js';
+import { initI18n, getCurrentLang, t } from './i18n.js';
 
 let imagesManifest = {};
 
@@ -18,15 +19,27 @@ async function initApp() {
             }
         });
 
+        // Init i18n BEFORE rendering
+        initI18n();
+
         renderPortfolio();
         setupModals();
-        setupArchive();
         
         // Init Utils
         setupTypewriter();
         setupObserver();
         setupCursor();
+        setupCopyButton();
         lucide.createIcons();
+
+        // Listen for language changes
+        window.addEventListener('langChanged', () => {
+            renderPortfolio();
+            // Re-run observer and icons for new content
+            lucide.createIcons();
+            setupObserver();
+            if(window.refreshCursorHover) window.refreshCursorHover();
+        });
 
     } catch (e) {
         console.error("Manifest load failed. Run run_local.bat first.", e);
@@ -34,8 +47,14 @@ async function initApp() {
 }
 
 function createProjectCard(id, data) {
+    const lang = getCurrentLang();
+    const title = lang === 'en' ? data.title_en : data.title;
+    const desc = lang === 'en' ? data.desc_en : data.desc;
+    const tags = lang === 'en' ? (data.tags_en || data.tags) : data.tags;
+
     const hasMultipleImages = data.images && data.images.length > 1;
     const firstImg = (data.images && data.images.length) ? `assets/images/portfolio/${id}/${data.images[0]}` : '';
+    const dateStr = lang === 'en' ? (data.year_en || data.year) : data.year;
     const linksHtml = (data.links || []).map(l => 
         `<a href="${l.url}" class="project-link btn btn--secondary" target="_blank" style="padding: 0.5rem 1rem; font-size: 0.8rem;">${l.text} <i data-lucide="${l.icon}" style="width:14px;height:14px;"></i></a>`
     ).join('');
@@ -44,7 +63,7 @@ function createProjectCard(id, data) {
         <div class="project-card reveal" data-project="${id}">
             <div class="project-slider">
                 <div class="slides">
-                    <img src="${firstImg}" alt="${data.title}">
+                    <img src="${firstImg}" alt="${title}">
                 </div>
                 ${hasMultipleImages ? `
                 <div class="slider-controls">
@@ -53,14 +72,14 @@ function createProjectCard(id, data) {
                 </div>` : ''}
             </div>
             <div class="project-info">
-                <div class="project-year">${data.year}</div>
-                <h3>${data.title}</h3>
+                <div class="project-year">${dateStr}</div>
+                <h3>${title}</h3>
                 <div class="project-tags">
-                    ${data.tags.map(t => `<span>${t}</span>`).join('')}
+                    ${tags.map(t => `<span>${t}</span>`).join('')}
                 </div>
                 <div class="card-footer">
                     <div style="display:flex; gap:0.5rem;">${linksHtml}</div>
-                    <span class="view-details" style="cursor:pointer; font-weight:800; color:var(--accent);">Подробнее →</span>
+                    <span class="view-details" style="cursor:pointer; font-weight:800; color:var(--accent);">${t('portfolio_more')}</span>
                 </div>
             </div>
         </div>
@@ -79,49 +98,6 @@ function renderPortfolio() {
     setupSliders();
     setupObserver(); 
     if(window.refreshCursorHover) window.refreshCursorHover();
-}
-
-// Archive / Timeline View
-function setupArchive() {
-    const archiveBtn = document.getElementById('view-all-btn');
-    const archiveView = document.getElementById('archive-view');
-    const closeArchive = document.querySelector('.close-archive');
-
-    if (archiveBtn) archiveBtn.onclick = () => {
-        renderTimeline();
-        archiveView.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    };
-
-    if (closeArchive) closeArchive.onclick = () => {
-        archiveView.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    };
-}
-
-function renderTimeline() {
-    const container = document.getElementById('timeline-cont');
-    const sorted = Object.entries(projectsData).sort((a,b) => b[1].year - a[1].year);
-    
-    container.innerHTML = sorted.map(([id, data]) => `
-        <div class="timeline-project project-card" data-project="${id}">
-            <div class="tp-year">${data.year}</div>
-            <div class="tp-content">
-                <div class="tp-img">
-                    <img src="assets/images/portfolio/${id}/${data.images?.[0] || ''}">
-                </div>
-                <div class="tp-info">
-                    <h3>${data.title}</h3>
-                    <p>${data.desc.substring(0, 100)}...</p>
-                    <div class="project-tags">
-                        ${data.tags.map(t => `<span>${t}</span>`).join('')}
-                    </div>
-                </div>
-            </div>
-        </div>
-    `).join('');
-    
-    lucide.createIcons();
 }
 
 // Start
