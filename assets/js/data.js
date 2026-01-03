@@ -81,8 +81,8 @@ export const projectsData = {
         priority: true,
         tags: ["Strategy", "Turn-based", "Unity"],
         tags_en: ["Strategy", "Turn-based", "Unity"],
-        desc: "Разработка пошаговой стратегической игры Guilds UP!",
-        desc_en: "Developing the turn-based strategy game Guilds UP!",
+        desc: "Разработка пошаговой стратегической игры Guilds UP! Сложные механики боя, экономика и система прогрессии.",
+        desc_en: "Developing the turn-based strategy game Guilds UP! Complex combat mechanics, economy, and progression system.",
         links: []
     },
     museum_faceswap: {
@@ -93,8 +93,8 @@ export const projectsData = {
         priority: true,
         tags: ["AI", "FaceSwap", "Museums"],
         tags_en: ["AI", "FaceSwap", "Museums"],
-        desc: "Разработка проектов с заменой лиц и генерацией образов для музеев. Интерактивные ИИ-инсталляции.",
-        desc_en: "Developing AI projects with face swapping and image generation for museums. Interactive AI installations.",
+        desc: "Разработка проектов с заменой лиц и генерацией образов для музеев. Интерактивные ИИ-инсталляции, создающие уникальный пользовательский опыт.",
+        desc_en: "Developing AI projects with face swapping and image generation for museums. Interactive AI installations creating unique user experiences.",
         links: []
     },
     drones: {
@@ -121,8 +121,8 @@ export const projectsData = {
         priority: false,
         tags: ["Steam", "Optimization", "Unity"],
         tags_en: ["Steam", "Optimization", "Unity"],
-        desc: "Работа в студии над игрой Factory Tower. Оптимизация и разработка механик.",
-        desc_en: "Worked in a studio on Factory Tower. Optimization and mechanics development.",
+        desc: "Работа в студии над игрой Factory Tower. Оптимизация производительности, разработка игровых механик и подготовка к релизу в Steam.",
+        desc_en: "Worked in a studio on Factory Tower. Performance optimization, mechanics development, and Steam release preparation.",
         links: [{ text: "Steam", url: "https://store.steampowered.com/app/2023910/Factory_Tower/", icon: "external-link" }]
     },
     english_league: {
@@ -133,8 +133,8 @@ export const projectsData = {
         priority: false,
         tags: ["Education", "Kids", "Platform"],
         tags_en: ["Education", "Kids", "Platform"],
-        desc: "Авторская игровая платформа для детей 6-12 лет по изучению английского языка.",
-        desc_en: "Custom gaming platform for children aged 6-12 to learn English.",
+        desc: "Авторская игровая платформа для детей 6-12 лет по изучению английского языка. Геймификация процесса обучения.",
+        desc_en: "Custom gaming platform for children aged 6-12 to learn English. Gamified learning process.",
         links: [{ text: "Website", url: "https://feacademy.su", icon: "external-link" }]
     },
     ai_test: {
@@ -172,10 +172,10 @@ export const projectsData = {
         tags: ["VR", "Hand Tracking", "Immersive"],
         tags_en: ["VR", "Hand Tracking", "Immersive"],
         desc: `
-            <p>Создание VR туров и иммерсивных сцен. Hand Tracking: физические руки, которые не проваливаются сквозь предметы, скалолазание, взаимодействие с объектами.</p>
+            <p>Создание VR туров и иммерсивных сцен. Hand Tracking: физические руки, которые не проваливаются сквозь предметы, скалолазание, использование предметов, перемещение по меткам.</p>
         `,
         desc_en: `
-            <p>Creating VR tours and immersive scenes. Hand Tracking: physical hands that don't pass through objects, climbing, interaction.</p>
+            <p>Creating VR tours and immersive scenes. Hand Tracking: physical hands that don't pass through objects, climbing, interaction, teleportation system.</p>
         `,
         links: []
     },
@@ -188,7 +188,7 @@ export const projectsData = {
         tags: ["AR", "Social", "Mobile"],
         tags_en: ["AR", "Social", "Mobile"],
         desc: `
-            <p>AR-опыт с Tesla CyberTruck. Сканирование окружения, трекинг, изменение размера/положения машины. Фото с машиной и постинг в ВК.</p>
+            <p>AR-опыт с Tesla CyberTruck. Сканирование окружения, трекинг, изменение размера/положения машины. Фото с машиной и постинг в ВК альбом.</p>
         `,
         desc_en: `
             <p>AR experience with Tesla CyberTruck. Environment scanning, tracking, photo features with VK integration.</p>
@@ -203,8 +203,8 @@ export const projectsData = {
         priority: false,
         tags: ["Touch Screen", "Data-driven", "Interactive"],
         tags_en: ["Touch Screen", "Data-driven", "Interactive"],
-        desc: "Приложение для стендов. Динамическая загрузка контента (текст, фото, видео) без пересборки билда.",
-        desc_en: "App for stands. Dynamic content loading (text, photos, video) without rebuilding.",
+        desc: "Приложение для стендов. Динамическая загрузка контента (текст, фото, видео) из папок проекта без пересборки билда. Слайдшоу и видеоплеер.",
+        desc_en: "App for stands. Dynamic content loading (text, photos, video) without rebuilding. Slideshow and video player.",
         links: []
     },
     kef_navigation: {
@@ -215,8 +215,8 @@ export const projectsData = {
         priority: false,
         tags: ["Mapping", "Navigation", "Wayfinding"],
         tags_en: ["Mapping", "Navigation", "Wayfinding"],
-        desc: "Система навигации для вертикальных стендов. Расписание + Схема с построением маршрутов в реальном времени.",
-        desc_en: "Navigation system for vertical stands. Schedule + Map with real-time wayfinding.",
+        desc: "Система навигации для вертикальных стендов. Расписание мероприятий + Интерактивная схема с построением маршрутов в реальном времени для 5 разных точек расположения.",
+        desc_en: "Navigation system for vertical stands. Schedule + Map with real-time wayfinding for 5 different locations.",
         links: []
     },
     tele2_collage: {
@@ -227,8 +227,8 @@ export const projectsData = {
         priority: false,
         tags: ["Async", "VFX", "Interactive"],
         tags_en: ["Async", "VFX", "Interactive"],
-        desc: "Асинхронная загрузка и отображение бесконечного коллажа фоток без повторений.",
-        desc_en: "Asynchronous loading and display of an infinite photo collage without repetitions.",
+        desc: "Асинхронная загрузка и отображение бесконечного коллажа фоток из папки без повторений. Динамическое обновление сетки.",
+        desc_en: "Asynchronous loading and display of an infinite photo collage without repetitions. Dynamic grid updates.",
         links: []
     },
     tele2_tablet: {
@@ -239,8 +239,8 @@ export const projectsData = {
         priority: false,
         tags: ["OSC", "Remote Control", "Tablet"],
         tags_en: ["OSC", "Remote Control", "Tablet"],
-        desc: "Управление большим экраном через планшет по OSC протоколу (интеграция с Resolume).",
-        desc_en: "Large screen control via tablet using OSC protocol (Resolume integration).",
+        desc: "Управление большим экраном через планшет по OSC протоколу. Интеграция с Resolume для запуска видеороликов одним нажатием.",
+        desc_en: "Large screen control via tablet using OSC protocol. Resolume integration for video triggering.",
         links: []
     },
     calculator: {
@@ -251,8 +251,8 @@ export const projectsData = {
         priority: false,
         tags: ["B2B", "PDF Export", "Database"],
         tags_en: ["B2B", "PDF Export", "Database"],
-        desc: "Система расчета стоимости изделий. Роли Оператор/Инженер, генерация PDF заказов.",
-        desc_en: "Product cost calculation system. Operator/Engineer roles, PDF order generation.",
+        desc: "Система расчета стоимости сложных изделий. Роли Оператор/Инженер, база данных параметров и генерация PDF-отчетов с заказами.",
+        desc_en: "Product cost calculation system. Operator/Engineer roles, parameter database, and PDF order generation.",
         links: []
     },
     farm_game: {
@@ -263,9 +263,21 @@ export const projectsData = {
         priority: false,
         tags: ["Mobile", "Optimization", "F2P"],
         tags_en: ["Mobile", "Optimization", "F2P"],
-        desc: "Тайкун про молочную ферму. AdJust, Facebook SDK и глубокая мобильная оптимизация.",
-        desc_en: "Idle tycoon about a dairy farm. Adjust, Facebook SDK, and deep mobile optimization.",
+        desc: "Мобильный тайкун про молочную ферму. Постройка пастеризаторов, упаковщиков, логистика. AdJust, Facebook SDK и глубокая оптимизация производительности.",
+        desc_en: "Idle tycoon about a dairy farm. Machinery building, logistics. Adjust, Facebook SDK, and deep performance optimization.",
         links: []
+    },
+    particles_test: {
+        title: "Particle System Visuals",
+        title_en: "Particle System Visuals",
+        year: "2022",
+        year_en: "2022",
+        priority: false,
+        tags: ["VFX", "Particles", "Shaders"],
+        tags_en: ["VFX", "Particles", "Shaders"],
+        desc: "Тесты сложных визуальных эффектов с помощью Particle System в Unity. Оптимизация и создание кастомных шейдеров для эффектов.",
+        desc_en: "Complex visual effects tests using Unity Particle System. Optimization and custom shaders for VFX.",
+        links: [{ text: "YouTube", url: "https://www.youtube.com/watch?v=6X_Z6Lx_XSw", icon: "external-link" }]
     },
     polus: {
         title: "POLUS - Survival Sandbox",
@@ -276,10 +288,16 @@ export const projectsData = {
         tags: ["Multiplayer", "Survival", "Procedural"],
         tags_en: ["Multiplayer", "Survival", "Procedural"],
         desc: `
-            <p>Крупный пет-проект: песочница с выживанием, реалистичной физикой персонажа и процедурной генерацией карты.</p>
+            <p>Крупный пет-проект в 3D. Песочница с выживанием, мультиплеером и упором на социальное взаимодействие.</p>
+            <h4>🚀 Реализовано:</h4>
+            <ul>
+                <li>Процедурная генерация огромного мира.</li>
+                <li>Реалистичная физика персонажа.</li>
+                <li>Инвентарь и система ключей для дверей.</li>
+            </ul>
         `,
         desc_en: `
-            <p>Large-scale pet project: survival sandbox with realistic character physics and procedural map generation.</p>
+            <p>Large-scale 3D pet project. Survival sandbox with multiplayer and social focus. Procedural generation, realistic physics, and inventory system.</p>
         `,
         links: [{ text: "GitHub", url: "https://github.com/DrSeedon/POLUS", icon: "github" }]
     },
@@ -292,10 +310,18 @@ export const projectsData = {
         tags: ["2D", "Multiplayer", "Unity"],
         tags_en: ["2D", "Multiplayer", "Unity"],
         desc: `
-            <p>Первый большой проект. 11 уровней с уникальными механиками, босс, процедурная генерация, мультиплеер и магазин.</p>
+            <p>Первый большой проект. Создавался для глубокого изучения Unity.</p>
+            <h4>🚀 Фичи:</h4>
+            <ul>
+                <li>11 уровней с уникальными физическими механиками.</li>
+                <li>Босс с 3 стадиями поведения.</li>
+                <li>Процедурная генерация и сетевой режим.</li>
+                <li>Управляемый транспорт (Hill Climb style).</li>
+                <li>Магазин скинов, покупки за реальные деньги и реклама.</li>
+            </ul>
         `,
         desc_en: `
-            <p>First big project. 11 levels with unique mechanics, boss, procedural generation, multiplayer, and store.</p>
+            <p>First big project for learning Unity. 11 unique levels, 3-stage boss, procedural generation, multiplayer, vehicles, and IAP/Ads integration.</p>
         `,
         links: [
             { text: "Google Play", url: "https://play.google.com/store/apps/details?id=com.SeedonsGames.IUH", icon: "external-link" },
@@ -310,8 +336,17 @@ export const projectsData = {
         priority: false,
         tags: ["Neural Networks", "Evolution", "AI"],
         tags_en: ["Neural Networks", "Evolution", "AI"],
-        desc: "Симулятор бактерий с собственными нейросетями. Мутации, естественный отбор и система Boids.",
-        desc_en: "Bacteria simulator with custom neural networks. Mutations, natural selection, and Boids system.",
+        desc: `
+            <p>Симулятор бактерий с собственными нейросетями. Мутации, естественный отбор и система Boids.</p>
+            <h4>🚀 Фичи:</h4>
+            <ul>
+                <li>Настройка всех правил мира в реальном времени.</li>
+                <li>Ядовитые зоны, требующие эволюционной адаптации.</li>
+            </ul>
+        `,
+        desc_en: `
+            <p>Bacteria simulator with custom neural networks. Mutations, natural selection, Boids system, and evolutionary adaptation to toxic zones.</p>
+        `,
         links: [{ text: "Google Play", url: "https://play.google.com/store/apps/details?id=com.SeedonsGames.Neuronka", icon: "external-link" }]
     },
     simple_mazze: {
@@ -322,8 +357,8 @@ export const projectsData = {
         priority: false,
         tags: ["Puzzle", "Algorithms", "Unity"],
         tags_en: ["Puzzle", "Algorithms", "Unity"],
-        desc: "Генерация лабиринтов любого размера, переключение 2D/3D и алгоритм поиска пути.",
-        desc_en: "Generation of mazes of any size, 2D/3D switching, and pathfinding algorithms.",
+        desc: "Генерация лабиринтов любого размера, мгновенное переключение между 2D и 3D режимами и алгоритм автоматического поиска пути.",
+        desc_en: "Generation of mazes of any size, seamless 2D/3D switching, and automatic pathfinding algorithms.",
         links: [{ text: "Google Play", url: "https://play.google.com/store/apps/details?id=com.SeedonsGames.SimpleMazze", icon: "external-link" }]
     }
 };
