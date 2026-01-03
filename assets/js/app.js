@@ -53,7 +53,7 @@ function createProjectCard(id, data) {
     const tags = lang === 'en' ? (data.tags_en || data.tags) : data.tags;
 
     const hasMultipleImages = data.images && data.images.length > 1;
-    const firstImg = (data.images && data.images.length) ? `assets/images/portfolio/${id}/${data.images[0]}` : '';
+    const firstImg = (data.images && data.images.length) ? `assets/images/portfolio/${id}/${data.images[0]}` : 'assets/images/placeholder.svg';
     const dateStr = lang === 'en' ? (data.year_en || data.year) : data.year;
     const linksHtml = (data.links || []).map(l => 
         `<a href="${l.url}" class="project-link btn btn--secondary" target="_blank" style="padding: 0.5rem 1rem; font-size: 0.8rem;">${l.text} <i data-lucide="${l.icon}" style="width:14px;height:14px;"></i></a>`
@@ -63,7 +63,7 @@ function createProjectCard(id, data) {
         <div class="project-card reveal" data-project="${id}">
             <div class="project-slider">
                 <div class="slides">
-                    <img src="${firstImg}" alt="${title}">
+                    <img src="${firstImg}" alt="${title}" loading="lazy" onerror="this.src='assets/images/placeholder.svg'; this.style.opacity='1';">
                 </div>
                 ${hasMultipleImages ? `
                 <div class="slider-controls">

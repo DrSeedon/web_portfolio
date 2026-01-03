@@ -97,7 +97,7 @@ export const projectsData = {
         desc_en: "Developing AI projects with face swapping and image generation for museums. Interactive AI installations.",
         links: []
     },
-    drone_simulator: {
+    drones: {
         title: "Drone Assembly Simulator",
         title_en: "Drone Assembly Simulator",
         year: "Март 2024",
@@ -179,7 +179,7 @@ export const projectsData = {
         `,
         links: []
     },
-    tesla_ar: {
+    tesla: {
         title: "AR Tesla CyberTruck",
         title_en: "AR Tesla CyberTruck",
         year: "Ноябрь 2022",

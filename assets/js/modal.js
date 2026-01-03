@@ -106,13 +106,16 @@ function renderArchive() {
     container.innerHTML = sorted.map(([id, data]) => {
         const title = lang === 'en' ? data.title_en : data.title;
         const tags = (lang === 'en' ? (data.tags_en || data.tags) : data.tags).join(', ');
-        const thumb = (data.images && data.images.length) ? `assets/images/portfolio/${id}/${data.images[0]}` : '';
         const dateStr = lang === 'en' ? (data.year_en || data.year) : data.year;
+        
+        // Handle missing images
+        const hasImages = data.images && data.images.length > 0;
+        const thumb = hasImages ? `assets/images/portfolio/${id}/${data.images[0]}` : 'assets/images/placeholder.svg';
         
         return `
             <div class="archive-item project-card" data-project="${id}">
-                <div class="archive-thumb">
-                    <img src="${thumb}" alt="${title}" loading="lazy">
+                <div class="archive-thumb ${!hasImages ? 'no-image' : ''}">
+                    <img src="${thumb}" alt="${title}" loading="lazy" ${!hasImages ? 'style="opacity:1;"' : ''}>
                 </div>
                 <div class="archive-info">
                     <div class="archive-year">${dateStr}</div>
@@ -167,9 +170,39 @@ function openModal(id) {
 
 function updateModalImage() {
     const data = projectsData[currentModalProj];
-    if (!data || !data.images?.length) return;
     const container = document.querySelector('.modal-slides');
-    if(container) {
-        container.innerHTML = `<img src="assets/images/portfolio/${currentModalProj}/${data.images[currentModalImgIdx]}" style="width:100%; height:100%; object-fit:contain; animation: fadeIn 0.5s;">`;
+    const gallery = document.querySelector('.modal-gallery');
+    
+    if(!container || !gallery) return;
+
+    // Reset container and hide loader if no images
+    if (!data || !data.images?.length) {
+        container.innerHTML = `<img src="assets/images/placeholder.svg" class="loaded" style="width:100%; height:100%; object-fit:contain; opacity:1;">`;
+        gallery.classList.remove('loading');
+        return;
     }
+
+    // Show loader
+    gallery.classList.add('loading');
+    
+    const imgPath = `assets/images/portfolio/${currentModalProj}/${data.images[currentModalImgIdx]}`;
+    
+    // Preload image
+    const tempImg = new Image();
+    tempImg.onload = () => {
+        container.innerHTML = `<img src="${imgPath}" class="loaded" style="width:100%; height:100%; object-fit:contain;">`;
+        gallery.classList.remove('loading');
+    };
+    tempImg.onerror = () => {
+        console.error("Failed to load image:", imgPath);
+        container.innerHTML = `
+            <div style="display:flex; flex-direction:column; align-items:center; gap:10px; color:var(--text-dim);">
+                <i data-lucide="image-off" style="width:40px; height:40px;"></i>
+                <span style="font-size:0.9rem;">Image not found</span>
+            </div>
+        `;
+        gallery.classList.remove('loading');
+        lucide.createIcons();
+    };
+    tempImg.src = imgPath;
 }
