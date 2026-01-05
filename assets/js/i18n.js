@@ -63,4 +63,9 @@ function updateLanguageUI() {
 
     // Update HTML lang attribute
     document.documentElement.lang = currentLang;
+
+    // Update Page Title
+    if (translations[currentLang].page_title) {
+        document.title = translations[currentLang].page_title;
+    }
 }

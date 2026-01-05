@@ -72,7 +72,8 @@ export const translations = {
         copy_all: "Скопировать всё",
         copy_success: "Скопировано!",
         stack_title: "🛠️ Технологический стек",
-        close: "Закрыть"
+        close: "Закрыть",
+        page_title: "Максим Астраханцев | Senior Unity Developer & AI Engineer"
     },
     en: {
         nav_about: "About",
@@ -149,6 +150,7 @@ export const translations = {
         copy_all: "Copy All Data",
         copy_success: "Copied!",    
         stack_title: "🛠️ Tech Stack",
-        close: "Close"
+        close: "Close",
+        page_title: "Maxim Astrakhantsev | Senior Unity Developer & AI Engineer"
     }
 };
