@@ -74,7 +74,9 @@ export const translations = {
         copy_success: "Скопировано!",
         stack_title: "🛠️ Технологический стек",
         close: "Закрыть",
-        page_title: "Максим Астраханцев | Senior Unity Developer & AI Engineer"
+        page_title: "Максим Астраханцев | Senior Unity Developer & AI Engineer",
+        share: "Поделиться",
+        share_success: "Ссылка скопирована!"
     },
     en: {
         nav_about: "About",
@@ -153,6 +155,8 @@ export const translations = {
         copy_success: "Copied!",    
         stack_title: "🛠️ Tech Stack",
         close: "Close",
-        page_title: "Maxim Astrakhantsev | Senior Unity Developer & AI Engineer"
+        page_title: "Maxim Astrakhantsev | Senior Unity Developer & AI Engineer",
+        share: "Share",
+        share_success: "Link copied!"
     }
 };

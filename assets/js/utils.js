@@ -200,3 +200,46 @@ export function setupCopyButton() {
         }
     };
 }
+
+export function setupShareButton() {
+    const btn = document.getElementById('share-site');
+    if (!btn) return;
+
+    btn.onclick = async () => {
+        const shareData = {
+            title: document.title,
+            text: t('hero_subtitle'),
+            url: window.location.href
+        };
+
+        try {
+            if (navigator.share) {
+                await navigator.share(shareData);
+            } else {
+                // Fallback: copy link to clipboard
+                await navigator.clipboard.writeText(window.location.href);
+                
+                // Show feedback using ghost text
+                const ghost = document.querySelector('.ghost-share');
+                if (ghost) {
+                    ghost.classList.add('active');
+                    setTimeout(() => ghost.classList.remove('active'), 2500);
+                }
+
+                // Show feedback using icon change
+                const icon = btn.querySelector('i');
+                const originalIcon = icon.getAttribute('data-lucide');
+                
+                icon.setAttribute('data-lucide', 'check');
+                lucide.createIcons();
+                
+                setTimeout(() => {
+                    icon.setAttribute('data-lucide', originalIcon);
+                    lucide.createIcons();
+                }, 2000);
+            }
+        } catch (err) {
+            console.error('Share failed:', err);
+        }
+    };
+}

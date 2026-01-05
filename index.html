@@ -51,7 +51,7 @@
     </nav>
 
     <header id="about" class="hero">
-        <div class="container">
+        <div class="container hero-wrapper">
             <div class="hero-content reveal">
                 <div class="badge" data-i18n="hero_badge">Senior Unity Developer | AI Engineer</div>
                 <h1 data-i18n="hero_name">Максим <span class="highlight">Астраханцев</span></h1>
@@ -66,12 +66,21 @@
                         <a href="https://www.linkedin.com/in/максим-астраханцев-13a9391b9/" class="btn btn--icon" target="_blank" title="LinkedIn"><i data-lucide="linkedin"></i></a>
                     </div>
                     <div class="copy-container">
+                        <button id="share-site" class="btn btn--primary" title="Share" data-i18n-title="share">
+                            <i data-lucide="share-2"></i>
+                        </button>
+                        <span class="ghost-text ghost-share" data-i18n="share_success">Link copied!</span>
+                    </div>
+                    <div class="copy-container">
                         <button id="copy-all-data" class="btn btn--primary" title="Copy All Data" data-i18n-title="copy_all">
                             <i data-lucide="copy"></i>
                         </button>
                         <span class="ghost-text" data-i18n="copy_success">Copied!</span>
                     </div>
-                </div>
+                </div>  
+            </div>
+            <div class="hero-image reveal">
+                <img src="assets/images/Hero.png" alt="Максим Астраханцев">
             </div>
         </div>
     </header>

@@ -95,7 +95,7 @@
     position: relative;
 }
 
-#copy-all-data {
+#copy-all-data, #share-site {
     padding: 0;
     width: 55px;
     height: 55px;

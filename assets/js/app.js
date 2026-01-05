@@ -1,7 +1,7 @@
 import { projectsData } from './data.js';
 import { setupSliders } from './slider.js';
 import { setupModals } from './modal.js';
-import { setupTypewriter, setupObserver, setupCursor, setupCopyButton } from './utils.js';
+import { setupTypewriter, setupObserver, setupCursor, setupCopyButton, setupShareButton } from './utils.js';
 import { initI18n, getCurrentLang, t } from './i18n.js';
 
 let imagesManifest = {};
@@ -30,6 +30,7 @@ async function initApp() {
         setupObserver();
         setupCursor();
         setupCopyButton();
+        setupShareButton();
         lucide.createIcons();
 
         // Listen for language changes
