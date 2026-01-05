@@ -192,6 +192,11 @@ footer {
     color: var(--text-dim);
 }
 
+/* Education Section */
+.education-section {
+    margin-top: 6rem;
+}
+
 .social-footer {
     display: flex;
     justify-content: center;

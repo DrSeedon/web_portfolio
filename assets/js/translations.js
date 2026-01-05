@@ -6,7 +6,7 @@ export const translations = {
         nav_portfolio: "Портфолио",
         
         hero_badge: "Senior Unity Developer | AI Engineer",
-        hero_subtitle: "Разработчик-универсал с 6-летним опытом. Делаю всё: от мобильных F2P хитов до нейросетевых систем. Решаю задачи, на которые другие тратят недели, за пару дней.",
+        hero_subtitle: "Разработчик-универсал с 6-летним опытом в Unity и 10-летним в IT. Делаю всё: от мобильных F2P хитов до сложных нейросетевых систем.",
         hero_cta: "Что я ищу",
         
         interests_title: "🚀 Идеальные вакансии",
@@ -24,10 +24,17 @@ export const translations = {
         exp_title: "💼 Опыт работы",
         exp_freelance_date: "Январь 2023 — Наст. время",
         exp_freelance_title: "Freelance Developer",
-        exp_freelance_desc: "Unity, Python, AI, Веб-серверы. Разработка сложных систем и игровых механик.",
+        exp_freelance_desc: "Unity, Python, AI, Веб-серверы. Создание различных проектов: от игровых механик до сложных ИИ-систем и парсеров данных.",
+        exp_multicast_date: "Август 2025 — Декабрь 2025",
+        exp_multicast_title: "Multicast Games",
+        exp_multicast_desc: "Unity Developer / Game Designer. Slime Catcher: Core механики, экономика, AI ботов, интеграция аналитики (Adjust, Metrica).",
         exp_iteo_date: "Январь 2022 — Январь 2023",
-        exp_iteo_title: "ITEO",
-        exp_iteo_desc: "Unity Developer. Разработка игрового ПО и интерактивных приложений.",
+        exp_iteo_title: "ИТЕО",
+        exp_iteo_desc: "Unity Developer. Интерактивные приложения (Kinect, VR, AR) для музеев и федеральных мероприятий. Базы данных и промышленное ПО.",
+        
+        edu_title: "🎓 Образование",
+        edu_sibsu_title: "СибГУ им. М.Ф. Решетнева",
+        edu_sibsu_desc: "Информатика и вычислительная техника, Бакалавр (2023)",
         
         skills_title: "🧠 Навыки и Компетенции",
         skill_gamedev_title: "Разработка ПО",
@@ -73,7 +80,7 @@ export const translations = {
         nav_portfolio: "Portfolio",
         
         hero_badge: "Senior Unity Developer | AI Engineer",
-        hero_subtitle: "Versatile developer with 6 years of experience. From F2P mobile hits to AI systems. Solving complex problems in days, not weeks.",
+        hero_subtitle: "Versatile developer with 6 years of Unity experience and 10 years in IT. From F2P mobile hits to complex AI systems.",
         hero_cta: "What I'm Looking For",
         
         interests_title: "🚀 Ideal Roles",
@@ -91,10 +98,17 @@ export const translations = {
         exp_title: "💼 Work Experience",
         exp_freelance_date: "Jan 2023 — Present",
         exp_freelance_title: "Freelance Developer",
-        exp_freelance_desc: "Unity, Python, AI, Web servers. Developing complex systems and game mechanics.",
+        exp_freelance_desc: "Unity, Python, AI, Web servers. Developing various systems: from game mechanics to complex AI models and data scrapers.",
+        exp_multicast_date: "Aug 2025 — Dec 2025",
+        exp_multicast_title: "Multicast Games",
+        exp_multicast_desc: "Unity Developer / Game Designer. Slime Catcher: Core loop, economy, AI bots, analytics integration (Adjust, AppMetrica).",
         exp_iteo_date: "Jan 2022 — Jan 2023",
         exp_iteo_title: "ITEO",
-        exp_iteo_desc: "Unity Developer. Developed game software and interactive apps.",
+        exp_iteo_desc: "Unity Developer. Interactive apps (Kinect, VR, AR) for museums and federal events. Database management and industrial software.",
+        
+        edu_title: "🎓 Education",
+        edu_sibsu_title: "Reshetnev Siberian State University of Science and Technology",
+        edu_sibsu_desc: "Computer Science and Engineering, Bachelor's degree (2023)",
         
         skills_title: "🧠 Skills & Competencies",
         skill_gamedev_title: "Software Development",
@@ -113,6 +127,8 @@ export const translations = {
         skill_vr_desc: "Solutions for tablets (AR) and VR headsets.",
         skill_pub_title: "Publishing",
         skill_pub_desc: "Google Play and Yandex Games publishing experience.",
+        skill_flutter_title: "Flutter & Mobile",
+        skill_flutter_desc: "Cross-platform development with Flutter, experience with iOS and WebGL.",
         skill_ind_title: "Industrial Software",
         skill_ind_desc: "Data calculation software, training simulators (UAV).",
         skill_crypto_title: "Crypto",
