@@ -9,6 +9,7 @@ export const translations = {
         hero_name: "Максим <span class=\"highlight\">Астраханцев</span>",
         hero_subtitle: "Разработчик-универсал с 6-летним опытом в Unity и 10-летним в IT. Делаю всё: от мобильных F2P хитов до сложных нейросетевых систем.",
         hero_cta: "Что я ищу",
+        hero_projects: "Мои проекты",
         
         interests_title: "🚀 Идеальные вакансии",
         int_unity_title: "Unity Developer",
@@ -85,6 +86,7 @@ export const translations = {
         hero_name: "Maxim <span class=\"highlight\">Astrakhantsev</span>",
         hero_subtitle: "Versatile developer with 6 years of Unity experience and 10 years in IT. From F2P mobile hits to complex AI systems.",
         hero_cta: "What I'm Looking For",
+        hero_projects: "My Projects",
         
         interests_title: "🚀 Ideal Roles",
         int_unity_title: "Unity Developer",
