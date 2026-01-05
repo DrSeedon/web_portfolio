@@ -61,6 +61,33 @@ export function setupCursor() {
 /**
  * REFACTORED COPY LOGIC
  */
+function cleanHTMLForClipboard(html) {
+    if (!html) return '';
+    
+    // Replace common tags with plain text equivalents
+    let text = html
+        .replace(/<br\s*\/?>/gi, '\n')
+        .replace(/<\/p>/gi, '\n\n')
+        .replace(/<li>/gi, '  • ')
+        .replace(/<\/li>/gi, '\n')
+        .replace(/<h4>/gi, '\n--- ')
+        .replace(/<\/h4>/gi, ' ---\n')
+        .replace(/<strong>/gi, '')
+        .replace(/<\/strong>/gi, '');
+
+    // Strip all other tags
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = text;
+    
+    // Clean up multiple newlines and trim
+    return tempDiv.textContent
+        .split('\n')
+        .map(line => line.trim())
+        .filter((line, i, arr) => line !== '' || (arr[i-1] !== ''))
+        .join('\n')
+        .trim();
+}
+
 function gatherResumeData() {
     const lang = getCurrentLang();
     const tr = translations[lang];
@@ -90,13 +117,25 @@ function gatherResumeData() {
         resume += `${time} | ${title}\n  ${desc}\n`;
     });
     
+    // Education
+    const eduSection = document.querySelector('.education-section');
+    if (eduSection) {
+        resume += `\n[ ${tr.edu_title.toUpperCase()} ]\n`;
+        const eduTitle = eduSection.querySelector('h3').innerText;
+        const eduDesc = eduSection.querySelector('p').innerText;
+        resume += `${eduTitle}\n  ${eduDesc}\n`;
+    }
+    
     // Portfolio
     resume += `\n[ ${tr.portfolio_title.toUpperCase()} ]\n`;
     Object.values(projectsData).forEach(proj => {
         const title = lang === 'en' ? proj.title_en : proj.title;
-        const desc = lang === 'en' ? proj.desc_en : proj.desc;
+        const rawDesc = lang === 'en' ? proj.desc_en : proj.desc;
+        const cleanDesc = cleanHTMLForClipboard(rawDesc);
         const tags = (lang === 'en' ? (proj.tags_en || proj.tags) : proj.tags).join(', ');
-        resume += `> ${proj.year} - ${title} [${tags}]\n  ${desc}\n`;
+        
+        resume += `> ${proj.year} - ${title} [${tags}]\n`;
+        resume += `  ${cleanDesc.replace(/\n/g, '\n  ')}\n\n`;
     });
     
     // Contacts
