@@ -1,4 +1,146 @@
 export const projectsData = {
+    orchestra: {
+        title: "Orchestra — оркестратор AI-агентов",
+        title_en: "Orchestra — Multi-Agent AI Orchestrator",
+        year: "2026 — наст. время",
+        year_en: "2026 — Present",
+        priority: true,
+        tags: ["Python", "FastAPI", "LLM", "MCP", "Open Source"],
+        tags_en: ["Python", "FastAPI", "LLM", "MCP", "Open Source"],
+        desc: `
+            <p><strong>Роль:</strong> автор и единственный инженер. Открытый код.</p>
+            <p>Платформа, которая берёт задачу в общем виде, режет её на части и запускает несколько AI-агентов параллельно. Каждый работает в своей копии репозитория, поэтому агенты не мешают друг другу. За время эксплуатации — <strong>556 сессий агентов</strong> и <strong>207 089 записанных событий</strong> на 21 проекте.</p>
+
+            <h4>🚀 Что внутри:</h4>
+            <ul>
+                <li><strong>4 рантайма под одним контуром:</strong> Claude, Codex, Grok и шлюз к OpenRouter, 18 моделей. Выбор модели по типу задачи, а не по цене.</li>
+                <li><strong>Изоляция через git worktree:</strong> агент не видит чужих изменений до слияния, объединяет результат только координатор.</li>
+                <li><strong>Состояние переживает перезапуск:</strong> живёт на сервере, а не в памяти процесса; прерванный ход помечается и поднимается заново.</li>
+                <li><strong>10+ собственных MCP-серверов:</strong> почта, таск-трекер, поиск, GitHub Actions, Figma. Сам оркестратор отдаёт 46 инструментов управления.</li>
+                <li><strong>Надёжность записи:</strong> журнал операций, идемпотентность по идентификатору, перепроверка результата через API после изменения. Непонятно завершившаяся операция блокирует повторы до разбора человеком.</li>
+                <li><strong>Права действий:</strong> три класса — можно сразу, только исследование, нужно подтверждение человека. Правила в коде, а не в промпте.</li>
+                <li><strong>Кросс-ревью:</strong> результат проверяет модель другого производителя. Ревьюер недоступен — проверка не подменяется своей моделью.</li>
+                <li><strong>2 600+ автотестов</strong>, Docker, CI/CD, песочница по Unix-правам.</li>
+            </ul>
+
+            <h4>🔍 Что дал разбор логов:</h4>
+            <ul>
+                <li>Таймаут создания задачи оказался лишней пересборкой на каждом запросе: <strong>38 с → 3 с</strong>, ускорение в 8–12 раз.</li>
+                <li>Агенты зависали намертво — виноват был не код, а модель порядка событий: порядковый номер записи отражает момент сохранения, а не событие. <strong>4 266 пар из 42 661</strong> шли в обратную сторону. После пересборки сопоставления по времени заблокированных сессий стало <strong>2 вместо 266</strong>.</li>
+            </ul>
+
+            <h4>🛠 Технологии:</h4>
+            <p>Python (asyncio), FastAPI, SQLite, MCP, Claude Agent SDK, Docker, git worktrees, HTMX/SSE.</p>
+        `,
+        desc_en: `
+            <p><strong>Role:</strong> author and sole engineer. Open source.</p>
+            <p>A platform that takes a high-level task, splits it into parts and runs several AI agents in parallel. Each works in its own repository checkout, so agents never overwrite each other. To date: <strong>556 agent sessions</strong> and <strong>207,089 logged events</strong> across 21 projects.</p>
+
+            <h4>🚀 Inside:</h4>
+            <ul>
+                <li><strong>4 runtimes under one lifecycle:</strong> Claude, Codex, Grok and an OpenRouter gateway, 18 models. Routing by task type, not by price.</li>
+                <li><strong>Git-worktree isolation:</strong> an agent cannot see others' work until merge; only the orchestrator merges.</li>
+                <li><strong>Restart-safe state:</strong> lives server-side, not in process memory; interrupted turns are marked and resumed.</li>
+                <li><strong>10+ custom MCP servers:</strong> mail, task tracker, search, GitHub Actions, Figma. The orchestrator itself exposes 46 control tools.</li>
+                <li><strong>Write reliability:</strong> operation journal, idempotency keys, read-back verification after every change. Indeterminate operations block retries until a human resolves them.</li>
+                <li><strong>Permission classes:</strong> act now, research only, or requires human approval — enforced in code, not in the prompt.</li>
+                <li><strong>Cross-vendor review:</strong> output is reviewed by a different vendor's model; if unavailable, review is skipped rather than substituted.</li>
+                <li><strong>2,600+ automated tests</strong>, Docker, CI/CD, Unix-permission sandboxing.</li>
+            </ul>
+
+            <h4>🔍 What log analysis revealed:</h4>
+            <ul>
+                <li>A task-creation timeout turned out to be a synchronous rebuild on every request: <strong>38 s → 3 s</strong>, an 8–12× speedup.</li>
+                <li>Agents hung permanently — the cause was not the code but the event-ordering model: SQLite autoincrement reflects commit order, not event order. <strong>4,266 pairs out of 42,661</strong> were inverted. Re-pairing by timestamp dropped blocked sessions from <strong>266 to 2</strong>.</li>
+            </ul>
+
+            <h4>🛠 Stack:</h4>
+            <p>Python (asyncio), FastAPI, SQLite, MCP, Claude Agent SDK, Docker, git worktrees, HTMX/SSE.</p>
+        `,
+        links: [{ text: "GitHub", url: "https://github.com/DrSeedon/orchestra", icon: "external-link" }]
+    },
+    ritual_platform: {
+        title: "Платформа для агрегатора услуг",
+        title_en: "B2B Platform Delivery",
+        year: "2026",
+        year_en: "2026",
+        priority: true,
+        tags: ["AI Agents", "Data 10⁸", "SEO", "B2B"],
+        tags_en: ["AI Agents", "Data 10⁸", "SEO", "B2B"],
+        desc: `
+            <p><strong>Роль:</strong> архитектура, постановка задач агентам, ответственность за результат.</p>
+            <p>Небольшая компания без своей разработки хотела вырасти в поисковой выдаче и принимать заявки онлайн. Бюджета на команду не было — задачи закрывались мультиагентной системой под моим контролем и контролем клиента.</p>
+
+            <h4>📈 Результат:</h4>
+            <ul>
+                <li>Видимость в поиске выросла <strong>в 49 раз</strong>: карта сайта с 9 846 до <strong>478 354</strong> адресов.</li>
+                <li>Поиск по архиву на <strong>114 млн записей</strong>, 41 ГБ исходных данных.</li>
+                <li><strong>152 244 города</strong> со склонением названий по падежам для поисковой выдачи.</li>
+                <li>Сопоставление <strong>62 млн записей</strong> отработало 9 часов без присмотра; отдельную задачу ускорил с <strong>31 часа до 24 минут</strong>.</li>
+                <li>Восемь направлений за два с половиной месяца: <strong>87 агентов</strong>, 8 274 вызова инструментов.</li>
+                <li>Голосовой помощник на линии 8-800: приём звонка, распознавание речи, перевод на живого оператора.</li>
+            </ul>
+
+            <h4>🛠 Технологии:</h4>
+            <p>Python, FastAPI, MySQL, Docker, Claude и Codex, собственные MCP-интеграции, платёжные сервисы, телефония (Asterisk, SpeechKit).</p>
+        `,
+        desc_en: `
+            <p><strong>Role:</strong> architecture, task specification for agents, ownership of the result.</p>
+            <p>A small company with no in-house development needed search visibility and online lead intake. With no budget for a team, the work was delivered by a multi-agent system under my supervision and the client's review.</p>
+
+            <h4>📈 Outcome:</h4>
+            <ul>
+                <li>Search visibility grew <strong>49×</strong>: sitemap from 9,846 to <strong>478,354</strong> URLs.</li>
+                <li>Archive search over <strong>114M records</strong>, 41 GB of source data.</li>
+                <li><strong>152,244 cities</strong> with grammatical case morphology for search pages.</li>
+                <li>A <strong>62M-record cross-match</strong> ran 9 hours unattended; one job was optimised from <strong>31 hours to 24 minutes</strong>.</li>
+                <li>Eight workstreams in two and a half months: <strong>87 agents</strong>, 8,274 tool calls.</li>
+                <li>Voice assistant on the 8-800 line: call intake, speech recognition, handoff to a human operator.</li>
+            </ul>
+
+            <h4>🛠 Stack:</h4>
+            <p>Python, FastAPI, MySQL, Docker, Claude and Codex, custom MCP integrations, payment providers, telephony (Asterisk, SpeechKit).</p>
+        `,
+        links: []
+    },
+    sensar: {
+        title: "Sensar — медицинский видеоларингоскоп",
+        title_en: "Sensar — Medical Video Laryngoscope",
+        year: "2026",
+        year_en: "2026",
+        priority: true,
+        tags: ["Embedded", "Qt/C++", "Medical", "Контракт 800k₽"],
+        tags_en: ["Embedded", "Qt/C++", "Medical", "₽800k contract"],
+        desc: `
+            <p><strong>Роль:</strong> разработка ПО устройства по коммерческому контракту.</p>
+            <p>Программное обеспечение для медицинского видеоларингоскопа — прибора, которым врач видит дыхательные пути пациента при интубации. Цена ошибки высокая, требования к приёмке формальные.</p>
+
+            <h4>✅ Результат:</h4>
+            <ul>
+                <li>Контракт <strong>800 000 ₽</strong>, приёмка по <strong>всем 11 критериям</strong>.</li>
+                <li>Загрузка устройства оптимизирована с <strong>20 секунд до 4,5</strong> — критично, когда прибор берут в руки в неотложной ситуации.</li>
+                <li>Запись видео, работа с камерой, интерфейс под управление в перчатках.</li>
+            </ul>
+
+            <h4>🛠 Технологии:</h4>
+            <p>Qt/C++, embedded Linux, работа с видеопотоком.</p>
+        `,
+        desc_en: `
+            <p><strong>Role:</strong> device software development under a commercial contract.</p>
+            <p>Software for a medical video laryngoscope — the device a doctor uses to see a patient's airway during intubation. High cost of error, formal acceptance requirements.</p>
+
+            <h4>✅ Outcome:</h4>
+            <ul>
+                <li><strong>₽800,000 contract</strong>, accepted on <strong>all 11 criteria</strong>.</li>
+                <li>Device boot time optimised from <strong>20 seconds to 4.5</strong> — critical when the device is picked up in an emergency.</li>
+                <li>Video capture, camera handling, UI designed for gloved operation.</li>
+            </ul>
+
+            <h4>🛠 Stack:</h4>
+            <p>Qt/C++, embedded Linux, video pipeline.</p>
+        `,
+        links: []
+    },
     slime_catcher: {
         title: "Slime Catcher - Farm Idle RPG",
         title_en: "Slime Catcher - Farm Idle RPG",
