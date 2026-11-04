@@ -1,26 +1,42 @@
-# DrSeedon — личная страница
+# DrSeedon — Personal Portfolio
 
-Личная страница Максима Астраханцева (DrSeedon): AI Agent Engineer, основатель [seedon.ru](https://seedon.ru).
+Personal portfolio of **Maxim Astrakhantsev** (`@DrSeedon`) — AI Agent Engineer & Founder of **[seedon.ru](https://seedon.ru)**.
 
-Главные B2B AI-продукты, Orchestra ADE, кейсы и вся работа компании — на **[seedon.ru](https://seedon.ru)**. Здесь остаётся персональная часть: обо мне, опыт и портфолио проектов (RU / EN).
+All commercial B2B AI products, **Orchestra ADE**, and enterprise case studies live on **[seedon.ru](https://seedon.ru)**. This repository hosts my personal showcase: background, experience, and project archive (bilingual EN / RU).
 
-## 🚀 Live
+## 🚀 Live Site
 
-[drseedon.github.io/web_portfolio](https://drseedon.github.io/web_portfolio/)
+**[drseedon.github.io/web_portfolio](https://drseedon.github.io/web_portfolio/)**
 
-## 🛠️ Стек
+## 🛠️ Tech Stack
 
-- HTML5 / CSS3 / JavaScript (ES-модули, без сборки)
+- HTML5 / CSS3 / Vanilla JavaScript (ES Modules, zero-build)
 - Lucide Icons
-- Inter и JetBrains Mono
+- Inter & JetBrains Mono
 
-## 🗂️ Структура
+## 🗂️ Structure
 
-- `index.html` — статичная русская версия (видна до запуска JS и поисковикам); тексты синхронны с `assets/js/translations.js`
-- `assets/js/translations.js` — тексты RU / EN
-- `assets/js/data.js` — данные проектов портфолио
-- `assets/css/banner.css` — плашка со ссылкой на seedon.ru
+- `index.html` — Static markup synchronized with `assets/js/translations.js`
+- `assets/js/translations.js` — Full EN / RU localization dictionary
+- `assets/js/data.js` — Portfolio project data (EN / RU)
+- `assets/css/banner.css` — Top callout banner pointing to `seedon.ru`
 
-## 👤 Автор
+## 👤 Author
 
-Максим Астраханцев — [@DrSeedon](https://t.me/DrSeedon) · [seedon.ru](https://seedon.ru)
+Maxim Astrakhantsev — [@DrSeedon](https://t.me/DrSeedon) · [seedon.ru](https://seedon.ru)
+
+---
+
+<details>
+<summary><b>🇷🇺 Русская версия (Russian translation)</b></summary>
+
+<br>
+
+Личная страница Максима Астраханцева (`@DrSeedon`): AI Agent Engineer, основатель **[seedon.ru](https://seedon.ru)**.
+
+Главные B2B AI-продукты, **Orchestra ADE**, кейсы и вся работа компании — на **[seedon.ru](https://seedon.ru)**. Здесь остаётся персональная часть: обо мне, опыт и портфолио проектов (RU / EN).
+
+- **Live:** [drseedon.github.io/web_portfolio](https://drseedon.github.io/web_portfolio/)
+- **Telegram:** [@DrSeedon](https://t.me/DrSeedon)
+
+</details>
