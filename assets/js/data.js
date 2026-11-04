@@ -1,107 +1,240 @@
 export const projectsData = {
     orchestra: {
-        title: "Orchestra — оркестратор AI-агентов",
-        title_en: "Orchestra — Multi-Agent AI Orchestrator",
+        title: "Orchestra — мультиагентный оркестратор (Open Source)",
+        title_en: "Orchestra — Multi-Agent AI Orchestrator (Open Source)",
         year: "2026 — наст. время",
         year_en: "2026 — Present",
         priority: true,
-        tags: ["Python", "FastAPI", "LLM", "MCP", "Open Source"],
-        tags_en: ["Python", "FastAPI", "LLM", "MCP", "Open Source"],
+        tags: ["Python", "FastAPI", "LLM", "MCP", "Git Worktrees", "Open Source"],
+        tags_en: ["Python", "FastAPI", "LLM", "MCP", "Git Worktrees", "Open Source"],
         desc: `
-            <p><strong>Роль:</strong> автор и единственный инженер. Открытый код.</p>
-            <p>Платформа, которая берёт задачу в общем виде, режет её на части и запускает несколько AI-агентов параллельно. Каждый работает в своей копии репозитория, поэтому агенты не мешают друг другу. За время эксплуатации — <strong>556 сессий агентов</strong> и <strong>207 089 записанных событий</strong> на 21 проекте.</p>
+            <p><strong>Роль:</strong> автор и единственный инженер. Открытый код (<a href="https://github.com/DrSeedon/orchestra" target="_blank">DrSeedon/orchestra</a>).</p>
+            <p>Платформа, которая берёт задачу в общем виде, режет её на части и запускает десятки AI-агентов параллельно (до 100+ воркеров). Каждый работает в своей изолированной копии репозитория (<code>git worktree</code>), поэтому агенты не мешают друг другу. За время эксплуатации — <strong>556+ сессий агентов</strong> и <strong>207 089+ записанных событий</strong> на 21 проекте.</p>
 
             <h4>🚀 Что внутри:</h4>
             <ul>
-                <li><strong>4 рантайма под одним контуром:</strong> Claude, Codex, Grok и шлюз к OpenRouter, 18 моделей. Выбор модели по типу задачи, а не по цене.</li>
+                <li><strong>4 рантайма под одним контуром:</strong> Claude, OpenAI Codex, Grok и шлюз к OpenRouter, 18 моделей. Выбор модели по типу задачи, а не по цене.</li>
                 <li><strong>Изоляция через git worktree:</strong> агент не видит чужих изменений до слияния, объединяет результат только координатор.</li>
-                <li><strong>Состояние переживает перезапуск:</strong> живёт на сервере, а не в памяти процесса; прерванный ход помечается и поднимается заново.</li>
-                <li><strong>10+ собственных MCP-серверов:</strong> почта, таск-трекер, поиск, GitHub Actions, Figma. Сам оркестратор отдаёт 46 инструментов управления.</li>
-                <li><strong>Надёжность записи:</strong> журнал операций, идемпотентность по идентификатору, перепроверка результата через API после изменения. Непонятно завершившаяся операция блокирует повторы до разбора человеком.</li>
-                <li><strong>Права действий:</strong> три класса — можно сразу, только исследование, нужно подтверждение человека. Правила в коде, а не в промпте.</li>
-                <li><strong>Кросс-ревью:</strong> результат проверяет модель другого производителя. Ревьюер недоступен — проверка не подменяется своей моделью.</li>
-                <li><strong>2 600+ автотестов</strong>, Docker, CI/CD, песочница по Unix-правам.</li>
+                <li><strong>Состояние переживает перезапуск:</strong> живёт на сервере (SQLite), а не в памяти процесса; прерванный ход помечается и поднимается заново.</li>
+                <li><strong>10+ собственных MCP-серверов:</strong> почта, таск-трекер, реклама, поиск, GitHub Actions, Figma. Сам оркестратор отдаёт 46 инструментов управления.</li>
+                <li><strong>Надёжность записи:</strong> журнал операций, идемпотентность по идентификатору, перепроверка результата через API после изменения.</li>
+                <li><strong>Права действий и кросс-ревью:</strong> три класса прав в коде (не в промпте), кросс-ревью моделью другого вендора, <strong>2 600+ автотестов</strong>, Docker, CI/CD.</li>
             </ul>
 
             <h4>🔍 Что дал разбор логов:</h4>
             <ul>
                 <li>Таймаут создания задачи оказался лишней пересборкой на каждом запросе: <strong>38 с → 3 с</strong>, ускорение в 8–12 раз.</li>
-                <li>Агенты зависали намертво — виноват был не код, а модель порядка событий: порядковый номер записи отражает момент сохранения, а не событие. <strong>4 266 пар из 42 661</strong> шли в обратную сторону. После пересборки сопоставления по времени заблокированных сессий стало <strong>2 вместо 266</strong>.</li>
+                <li>Агенты зависали намертво из-за инверсии порядка событий при сохранении (<strong>4 266 пар из 42 661</strong>). После пересборки сопоставления по времени заблокированных сессий стало <strong>2 вместо 266</strong>.</li>
             </ul>
 
             <h4>🛠 Технологии:</h4>
             <p>Python (asyncio), FastAPI, SQLite, MCP, Claude Agent SDK, Docker, git worktrees, HTMX/SSE.</p>
         `,
         desc_en: `
-            <p><strong>Role:</strong> author and sole engineer. Open source.</p>
-            <p>A platform that takes a high-level task, splits it into parts and runs several AI agents in parallel. Each works in its own repository checkout, so agents never overwrite each other. To date: <strong>556 agent sessions</strong> and <strong>207,089 logged events</strong> across 21 projects.</p>
+            <p><strong>Role:</strong> author and sole engineer. Open source (<a href="https://github.com/DrSeedon/orchestra" target="_blank">DrSeedon/orchestra</a>).</p>
+            <p>A platform that takes a high-level task, splits it into parts and runs dozens of AI agents in parallel (100+ workers across departments). Each works in its own isolated repository checkout (<code>git worktree</code>), so agents never overwrite each other. To date: <strong>556+ agent sessions</strong> and <strong>207,089+ logged events</strong> across 21 projects.</p>
 
             <h4>🚀 Inside:</h4>
             <ul>
-                <li><strong>4 runtimes under one lifecycle:</strong> Claude, Codex, Grok and an OpenRouter gateway, 18 models. Routing by task type, not by price.</li>
+                <li><strong>4 runtimes under one lifecycle:</strong> Claude, OpenAI Codex, Grok and an OpenRouter gateway, 18 models. Routing by task type, not by price.</li>
                 <li><strong>Git-worktree isolation:</strong> an agent cannot see others' work until merge; only the orchestrator merges.</li>
-                <li><strong>Restart-safe state:</strong> lives server-side, not in process memory; interrupted turns are marked and resumed.</li>
-                <li><strong>10+ custom MCP servers:</strong> mail, task tracker, search, GitHub Actions, Figma. The orchestrator itself exposes 46 control tools.</li>
-                <li><strong>Write reliability:</strong> operation journal, idempotency keys, read-back verification after every change. Indeterminate operations block retries until a human resolves them.</li>
-                <li><strong>Permission classes:</strong> act now, research only, or requires human approval — enforced in code, not in the prompt.</li>
-                <li><strong>Cross-vendor review:</strong> output is reviewed by a different vendor's model; if unavailable, review is skipped rather than substituted.</li>
-                <li><strong>2,600+ automated tests</strong>, Docker, CI/CD, Unix-permission sandboxing.</li>
+                <li><strong>Restart-safe state:</strong> lives server-side (SQLite), not in process memory; interrupted turns are marked and resumed.</li>
+                <li><strong>10+ custom MCP servers:</strong> mail, task tracker, ad campaigns, search, GitHub Actions, Figma. The orchestrator itself exposes 46 control tools.</li>
+                <li><strong>Write reliability:</strong> operation journal, idempotency keys, read-back verification after every change.</li>
+                <li><strong>Permission classes &amp; cross-vendor review:</strong> enforced in code (not prompts), cross-reviewed by a different vendor's model, <strong>2,600+ automated tests</strong>, Docker, CI/CD.</li>
             </ul>
 
             <h4>🔍 What log analysis revealed:</h4>
             <ul>
                 <li>A task-creation timeout turned out to be a synchronous rebuild on every request: <strong>38 s → 3 s</strong>, an 8–12× speedup.</li>
-                <li>Agents hung permanently — the cause was not the code but the event-ordering model: SQLite autoincrement reflects commit order, not event order. <strong>4,266 pairs out of 42,661</strong> were inverted. Re-pairing by timestamp dropped blocked sessions from <strong>266 to 2</strong>.</li>
+                <li>Agents hung permanently due to SQLite commit-order vs. event-order inversion (<strong>4,266 pairs out of 42,661</strong>). Re-pairing by timestamp dropped blocked sessions from <strong>266 to 2</strong>.</li>
             </ul>
 
             <h4>🛠 Stack:</h4>
             <p>Python (asyncio), FastAPI, SQLite, MCP, Claude Agent SDK, Docker, git worktrees, HTMX/SSE.</p>
         `,
-        links: [{ text: "GitHub", url: "https://github.com/DrSeedon/orchestra", icon: "external-link" }]
+        links: [
+            { text: "GitHub", url: "https://github.com/DrSeedon/orchestra", icon: "github" },
+            { text: "Seedon.ru", url: "https://seedon.ru", icon: "external-link" }
+        ]
+    },
+    kesha_brain: {
+        title: "Kesha & CEO Second Brain — 24/7 AI-операционка",
+        title_en: "Kesha & CEO Second Brain — 24/7 Executive AI OS",
+        year: "2025 — наст. время",
+        year_en: "2025 — Present",
+        priority: true,
+        tags: ["Second Brain", "Hybrid RAG", "Claude 4.6", "Voice AI", "Open Source"],
+        tags_en: ["Second Brain", "Hybrid RAG", "Claude 4.6", "Voice AI", "Open Source"],
+        desc: `
+            <p><strong>Роль:</strong> архитектор и разработчик. Открытый код ядра: <a href="https://github.com/DrSeedon/kesha-tg-bot" target="_blank">DrSeedon/kesha-tg-bot</a>.</p>
+            <p>Персональная операционная система и «Второй мозг» руководителя, работающий 24/7 в продакшене более года. Объединяет голос, переписки, почту, таск-трекер (YouGile), документы (43+ формата) и граф знаний Obsidian в единую память без потери контекста.</p>
+
+            <h4>🧠 Архитектура и возможности:</h4>
+            <ul>
+                <li><strong>Гибридная память (Hybrid RAG + Knowledge Graph):</strong> векторный поиск (<code>bge-m3</code>, 1024-dim, cosine similarity) + полнотекстовый поиск SQLite FTS5 (BM25 с русской морфологией) + граф связей <code>[[wikilinks]]</code> (люди, компании, проекты, решения, дедлайны).</li>
+                <li><strong>45+ модулей и 16+ автономных инструментов:</strong> от семантического поиска по прошлым договорённостям до создания задач в YouGile, отправки писем, генерации отчётов и управления браузером (Playwright).</li>
+                <li><strong>Голосовой контур:</strong> транскрибация голосовых и длинных планерок за секунды (Deepgram Nova-2) с автоматической выжимкой решений, рисков и поручений + голосовой ответ (ElevenLabs v4).</li>
+                <li><strong>Каскад надёжности:</strong> при недоступности основного провайдера автоматически переключается на резервный контур (Claude → Gemini / OpenAI / локальный Whisper) без потери ни одного сообщения.</li>
+                <li><strong>Качество в цифрах:</strong> <strong>1 700+ автотестов</strong>, ~18 000 строк кода, нулевая потеря контекста между сессиями.</li>
+            </ul>
+
+            <h4>🛠 Технологии:</h4>
+            <p>Python 3.12, aiogram 3, Claude Agent SDK, SQLite + FTS5, bge-m3 embeddings, Deepgram STT, ElevenLabs TTS, Playwright, Docker.</p>
+        `,
+        desc_en: `
+            <p><strong>Role:</strong> system architect and developer. Open-source core: <a href="https://github.com/DrSeedon/kesha-tg-bot" target="_blank">DrSeedon/kesha-tg-bot</a>.</p>
+            <p>A 24/7 Executive Second Brain and AI operating system running in production for over a year. Unifies voice notes, meetings, emails, task trackers (YouGile), documents (43+ formats), and an Obsidian knowledge graph into a single persistent memory layer.</p>
+
+            <h4>🧠 Architecture &amp; Capabilities:</h4>
+            <ul>
+                <li><strong>Hybrid Memory (Vector + FTS5 + Knowledge Graph):</strong> semantic vector search (<code>bge-m3</code>, 1024-dim) combined with SQLite FTS5 BM25 keyword search and an interconnected Obsidian graph (people, deals, projects, decisions, commitments).</li>
+                <li><strong>45+ modules &amp; 16+ autonomous tools:</strong> from instant context retrieval before executive calls to creating tracker tasks, drafting/sending emails, generating PDF/Word briefs, and browser automation (Playwright).</li>
+                <li><strong>Voice-first workflow:</strong> transcribes voice notes and hour-long meetings in seconds (Deepgram Nova-2), automatically extracting action items, owners, and risks + natural voice synthesis (ElevenLabs v4).</li>
+                <li><strong>Multi-provider failover cascade:</strong> seamlessly routes across Claude, Gemini, OpenAI, and local Whisper so no executive input is ever lost.</li>
+                <li><strong>Production quality:</strong> <strong>1,700+ automated tests</strong>, ~18,000 lines of Python, zero context loss across restarts.</li>
+            </ul>
+
+            <h4>🛠 Stack:</h4>
+            <p>Python 3.12, aiogram 3, Claude Agent SDK, SQLite + FTS5, bge-m3 embeddings, Deepgram STT, ElevenLabs TTS, Playwright, Docker.</p>
+        `,
+        links: [
+            { text: "GitHub (Kesha)", url: "https://github.com/DrSeedon/kesha-tg-bot", icon: "github" }
+        ]
+    },
+    mcp_ecosystem: {
+        title: "Экосистема из 10+ собственных MCP-серверов",
+        title_en: "10+ Custom Production MCP Servers Ecosystem",
+        year: "2025 — 2026",
+        year_en: "2025 — 2026",
+        priority: true,
+        tags: ["MCP", "Tool Calling", "FastMCP", "B2B Integrations", "Open Source"],
+        tags_en: ["MCP", "Tool Calling", "FastMCP", "B2B Integrations", "Open Source"],
+        desc: `
+            <p><strong>Роль:</strong> автор открытых MCP-коннекторов для связки LLM-агентов с реальными бизнес-системами.</p>
+            <p>Набор специализированных серверов протокола <strong>Model Context Protocol (MCP)</strong>, позволяющих AI-агентам безопасно управлять рекламой, таск-трекерами, корпоративной почтой, поиском и внешними API с проверкой результата каждого действия.</p>
+
+            <h4>🔌 Открытые репозитории в экосистеме:</h4>
+            <ul>
+                <li><strong><a href="https://github.com/DrSeedon/yougile-mcp" target="_blank">DrSeedon/yougile-mcp</a>:</strong> 39 инструментов для управления проектами, досками, колонками, задачами и сотрудниками в YouGile.</li>
+                <li><strong><a href="https://github.com/DrSeedon/yandex-direct-mcp" target="_blank">DrSeedon/yandex-direct-mcp</a>:</strong> управление рекламными кампаниями Яндекс.Директ v5 (кампании, группы, объявления, ключевые фразы, ставки, минус-слова, аналитика).</li>
+                <li><strong><a href="https://github.com/DrSeedon/mailru-mcp" target="_blank">DrSeedon/mailru-mcp</a>:</strong> 15 инструментов IMAP/SMTP для автономной работы агентов с корпоративной почтой (поиск, треды, вложения, отправка).</li>
+                <li><strong><a href="https://github.com/DrSeedon/mcp-websearch" target="_blank">DrSeedon/mcp-websearch</a>:</strong> бесплатный мульти-поисковый MCP-сервер с извлечением чистого контента страниц для глубокого ресёрча.</li>
+                <li><strong><a href="https://github.com/DrSeedon/gpb-mcp" target="_blank">DrSeedon/gpb-mcp</a>:</strong> специализированный коннектор для интеграции с корпоративными и финансовыми шлюзами.</li>
+            </ul>
+
+            <h4>🛡 Инженерные стандарты:</h4>
+            <p>Идемпотентность по ключу операции, журнал вызовов (Write-Ahead Log), автоматический read-back после записи и защита от повторного выполнения зависших мутаций.</p>
+        `,
+        desc_en: `
+            <p><strong>Role:</strong> creator of open-source MCP connectors bridging LLM agents with live business systems.</p>
+            <p>A suite of production <strong>Model Context Protocol (MCP)</strong> servers enabling AI agents to safely operate ad platforms, project trackers, corporate email, web search, and enterprise APIs with read-back verification on every mutation.</p>
+
+            <h4>🔌 Open-Source Repositories:</h4>
+            <ul>
+                <li><strong><a href="https://github.com/DrSeedon/yougile-mcp" target="_blank">DrSeedon/yougile-mcp</a>:</strong> 39 tools for managing projects, boards, columns, tasks, and assignees in YouGile CRM/tracker.</li>
+                <li><strong><a href="https://github.com/DrSeedon/yandex-direct-mcp" target="_blank">DrSeedon/yandex-direct-mcp</a>:</strong> full Yandex.Direct API v5 automation (campaigns, ad groups, ads, keywords, bids, negative keywords, performance reports).</li>
+                <li><strong><a href="https://github.com/DrSeedon/mailru-mcp" target="_blank">DrSeedon/mailru-mcp</a>:</strong> 15 IMAP/SMTP tools for autonomous corporate email workflows (search, threads, attachments, replies).</li>
+                <li><strong><a href="https://github.com/DrSeedon/mcp-websearch" target="_blank">DrSeedon/mcp-websearch</a>:</strong> multi-engine web search and clean page-content extraction server for deep agentic research.</li>
+                <li><strong><a href="https://github.com/DrSeedon/gpb-mcp" target="_blank">DrSeedon/gpb-mcp</a>:</strong> enterprise gateway and API integration server.</li>
+            </ul>
+
+            <h4>🛡 Engineering Standards:</h4>
+            <p>Idempotency keys, Write-Ahead operation journal, automatic read-back verification after mutations, and human-in-the-loop locks on indeterminate writes.</p>
+        `,
+        links: [
+            { text: "yougile-mcp", url: "https://github.com/DrSeedon/yougile-mcp", icon: "github" },
+            { text: "yandex-direct", url: "https://github.com/DrSeedon/yandex-direct-mcp", icon: "github" },
+            { text: "mailru-mcp", url: "https://github.com/DrSeedon/mailru-mcp", icon: "github" },
+            { text: "mcp-websearch", url: "https://github.com/DrSeedon/mcp-websearch", icon: "github" }
+        ]
     },
     ritual_platform: {
-        title: "Платформа для агрегатора услуг",
-        title_en: "B2B Platform Delivery",
+        title: "B2B-платформа и Data-пайплайн на 114 млн записей",
+        title_en: "B2B Platform & 114M-Record AI Data Pipeline",
         year: "2026",
         year_en: "2026",
         priority: true,
-        tags: ["AI Agents", "Data 10⁸", "SEO", "B2B"],
-        tags_en: ["AI Agents", "Data 10⁸", "SEO", "B2B"],
+        tags: ["AI Agents", "Data 10⁸", "SEO 49×", "Voice 8-800", "B2B"],
+        tags_en: ["AI Agents", "Data 10⁸", "SEO 49×", "Voice 8-800", "B2B"],
         desc: `
-            <p><strong>Роль:</strong> архитектура, постановка задач агентам, ответственность за результат.</p>
-            <p>Небольшая компания без своей разработки хотела вырасти в поисковой выдаче и принимать заявки онлайн. Бюджета на команду не было — задачи закрывались мультиагентной системой под моим контролем и контролем клиента.</p>
+            <p><strong>Роль:</strong> архитектура, постановка задач рою AI-агентов, ответственность за бизнес-результат.</p>
+            <p>Компания без собственной команды разработки хотела кратно вырасти в поисковой выдаче и автоматизировать приём заявок. Вся разработка (8 направлений за 2,5 месяца) была выполнена мультиагентной системой под моим контролем.</p>
 
-            <h4>📈 Результат:</h4>
+            <h4>📈 Измеримый бизнес-результат:</h4>
             <ul>
-                <li>Видимость в поиске выросла <strong>в 49 раз</strong>: карта сайта с 9 846 до <strong>478 354</strong> адресов.</li>
-                <li>Поиск по архиву на <strong>114 млн записей</strong>, 41 ГБ исходных данных.</li>
-                <li><strong>152 244 города</strong> со склонением названий по падежам для поисковой выдачи.</li>
-                <li>Сопоставление <strong>62 млн записей</strong> отработало 9 часов без присмотра; отдельную задачу ускорил с <strong>31 часа до 24 минут</strong>.</li>
-                <li>Восемь направлений за два с половиной месяца: <strong>87 агентов</strong>, 8 274 вызова инструментов.</li>
-                <li>Голосовой помощник на линии 8-800: приём звонка, распознавание речи, перевод на живого оператора.</li>
+                <li>Видимость в поиске выросла <strong>в 49 раз</strong>: карта сайта с 9 846 до <strong>478 354</strong> индексируемых страниц.</li>
+                <li>Высоконагруженный поиск по архиву на <strong>114 млн записей</strong> (41 ГБ исходных данных).</li>
+                <li>Геобаза на <strong>152 244 населённых пункта</strong> со склонением названий по падежам.</li>
+                <li>Сопоставление <strong>62 млн записей</strong> отработало 9 часов без присмотра; ключевая задача оптимизирована с <strong>31 часа до 24 минут</strong> (ускорение в 77 раз).</li>
+                <li>Задействовано <strong>87 специализированных AI-агентов</strong>, выполнено 8 274 инструментальных вызова.</li>
+                <li>Голосовой AI-ассистент на линии 8-800 (Asterisk + SpeechKit): приём звонка, распознавание речи, квалификация и перевод на оператора.</li>
             </ul>
 
             <h4>🛠 Технологии:</h4>
             <p>Python, FastAPI, MySQL, Docker, Claude и Codex, собственные MCP-интеграции, платёжные сервисы, телефония (Asterisk, SpeechKit).</p>
         `,
         desc_en: `
-            <p><strong>Role:</strong> architecture, task specification for agents, ownership of the result.</p>
-            <p>A small company with no in-house development needed search visibility and online lead intake. With no budget for a team, the work was delivered by a multi-agent system under my supervision and the client's review.</p>
+            <p><strong>Role:</strong> system architecture, agent fleet orchestration, end-to-end delivery ownership.</p>
+            <p>A company with no in-house engineering team needed massive search visibility and automated lead intake. All 8 workstreams were delivered in 2.5 months by a multi-agent fleet under my supervision.</p>
 
-            <h4>📈 Outcome:</h4>
+            <h4>📈 Measurable Business Outcome:</h4>
             <ul>
-                <li>Search visibility grew <strong>49×</strong>: sitemap from 9,846 to <strong>478,354</strong> URLs.</li>
-                <li>Archive search over <strong>114M records</strong>, 41 GB of source data.</li>
-                <li><strong>152,244 cities</strong> with grammatical case morphology for search pages.</li>
-                <li>A <strong>62M-record cross-match</strong> ran 9 hours unattended; one job was optimised from <strong>31 hours to 24 minutes</strong>.</li>
-                <li>Eight workstreams in two and a half months: <strong>87 agents</strong>, 8,274 tool calls.</li>
-                <li>Voice assistant on the 8-800 line: call intake, speech recognition, handoff to a human operator.</li>
+                <li>Search visibility grew <strong>49×</strong>: sitemap expanded from 9,846 to <strong>478,354</strong> indexed URLs.</li>
+                <li>High-speed archive search over <strong>114M records</strong> (41 GB of raw data).</li>
+                <li><strong>152,244 localities</strong> with full grammatical case morphology for programmatic SEO pages.</li>
+                <li>A <strong>62M-record cross-match</strong> ran 9 hours unattended; a bottleneck pipeline was optimized from <strong>31 hours down to 24 minutes</strong> (77× faster).</li>
+                <li>Delivered across 8 workstreams by <strong>87 specialized AI agents</strong> executing 8,274 verified tool calls.</li>
+                <li>Voice AI operator on the 8-800 toll-free line (Asterisk + SpeechKit): call intake, real-time STT, qualification, and seamless human handoff.</li>
             </ul>
 
             <h4>🛠 Stack:</h4>
             <p>Python, FastAPI, MySQL, Docker, Claude and Codex, custom MCP integrations, payment providers, telephony (Asterisk, SpeechKit).</p>
         `,
-        links: []
+        links: [
+            { text: "Кейс на Seedon.ru", url: "https://seedon.ru", icon: "external-link" }
+        ]
+    },
+    ai_infra_oss: {
+        title: "Open-Source AI Инфраструктура: Codex, Aperant, VoiceType",
+        title_en: "Open-Source AI Infrastructure: Codex, Aperant, VoiceType",
+        year: "2025 — 2026",
+        year_en: "2025 — 2026",
+        priority: true,
+        tags: ["OpenAI Codex", "Autonomous Dev", "Voice AI", "SaaS", "Open Source"],
+        tags_en: ["OpenAI Codex", "Autonomous Dev", "Voice AI", "SaaS", "Open Source"],
+        desc: `
+            <p><strong>Роль:</strong> контрибьютор в ядро агентных рантаймов и автор open-source инструментов автоматизации.</p>
+            <p>Помимо основных платформ, разрабатываю открытые инфраструктурные решения для автономного программирования, управления удалёнными рантаймами, голосового ввода и долгосрочной памяти агентов.</p>
+
+            <h4>🚀 Ключевые репозитории и контрибуции:</h4>
+            <ul>
+                <li><strong>Контрибуции в <a href="https://github.com/openai/codex/pull/30781" target="_blank">openai/codex (PR #30781, Issue #40362)</a>:</strong> исправления и улучшения в ядре агентного CLI OpenAI Codex (ветвление тредов, управление окном контекста и параллельными сессиями).</li>
+                <li><strong><a href="https://github.com/DrSeedon/Aperant" target="_blank">DrSeedon/Aperant</a> и <a href="https://github.com/DrSeedon/claude-server" target="_blank">DrSeedon/claude-server</a>:</strong> фреймворк автономной мульти-сессионной разработки и HTTP/SSE-сервер для удалённого управления агентными рантаймами на VPS.</li>
+                <li><strong><a href="https://github.com/DrSeedon/Claude-Code-Game-Master" target="_blank">DrSeedon/Claude-Code-Game-Master</a>:</strong> движок управления состоянием сложного мира и долгосрочной памятью на базе Claude Code (проверка правил, граф событий, синхронизация).</li>
+                <li><strong><a href="https://github.com/DrSeedon/VoiceType" target="_blank">DrSeedon/VoiceType</a>:</strong> десктопная система мгновенного голосового ввода и транскрибации с ИИ-постобработкой текста для ускорения работы инженера и руководителя.</li>
+                <li><strong><a href="https://github.com/DrSeedon/hedgehog-vpn" target="_blank">DrSeedon/hedgehog-vpn</a>:</strong> полностью автоматизированный SaaS-сервис (VLESS/Xray, автовыдача ключей, биллинг, мониторинг узлов).</li>
+            </ul>
+        `,
+        desc_en: `
+            <p><strong>Role:</strong> contributor to core agentic runtimes and author of open-source developer &amp; automation tools.</p>
+            <p>Alongside flagship platforms, I build open-source infrastructure for autonomous coding, remote runtime daemons, low-latency voice input, and stateful long-horizon agent memory.</p>
+
+            <h4>🚀 Key Repositories &amp; Core Contributions:</h4>
+            <ul>
+                <li><strong>Core contributions to <a href="https://github.com/openai/codex/pull/30781" target="_blank">openai/codex (PR #30781, Issue #40362)</a>:</strong> runtime fixes and enhancements for thread forking, context window management, and multi-agent stability.</li>
+                <li><strong><a href="https://github.com/DrSeedon/Aperant" target="_blank">DrSeedon/Aperant</a> &amp; <a href="https://github.com/DrSeedon/claude-server" target="_blank">DrSeedon/claude-server</a>:</strong> autonomous multi-session coding framework and HTTP/SSE daemon for orchestrating remote Claude Code instances on VPS clusters.</li>
+                <li><strong><a href="https://github.com/DrSeedon/Claude-Code-Game-Master" target="_blank">DrSeedon/Claude-Code-Game-Master</a>:</strong> stateful narrative &amp; world-simulation engine testing long-horizon LLM memory, rule enforcement, and entity state graphs.</li>
+                <li><strong><a href="https://github.com/DrSeedon/VoiceType" target="_blank">DrSeedon/VoiceType</a>:</strong> instant AI voice-to-text desktop pipeline with LLM post-processing for high-speed engineering and executive dictation.</li>
+                <li><strong><a href="https://github.com/DrSeedon/hedgehog-vpn" target="_blank">DrSeedon/hedgehog-vpn</a>:</strong> end-to-end automated SaaS service (VLESS/Xray node orchestration, automated billing, key provisioning).</li>
+            </ul>
+        `,
+        links: [
+            { text: "Aperant", url: "https://github.com/DrSeedon/Aperant", icon: "github" },
+            { text: "claude-server", url: "https://github.com/DrSeedon/claude-server", icon: "github" },
+            { text: "VoiceType", url: "https://github.com/DrSeedon/VoiceType", icon: "github" },
+            { text: "Codex PR", url: "https://github.com/openai/codex/pull/30781", icon: "git-pull-request" }
+        ]
     },
     sensar: {
         title: "Sensar — медицинский видеоларингоскоп",
@@ -109,35 +242,35 @@ export const projectsData = {
         year: "2026",
         year_en: "2026",
         priority: true,
-        tags: ["Embedded", "Qt/C++", "Medical", "Контракт 800k₽"],
-        tags_en: ["Embedded", "Qt/C++", "Medical", "₽800k contract"],
+        tags: ["Embedded Linux", "Qt/C++", "Medical", "Контракт 800k₽"],
+        tags_en: ["Embedded Linux", "Qt/C++", "Medical", "₽800k contract"],
         desc: `
-            <p><strong>Роль:</strong> разработка ПО устройства по коммерческому контракту.</p>
+            <p><strong>Роль:</strong> разработка системного и прикладного ПО устройства по коммерческому контракту.</p>
             <p>Программное обеспечение для медицинского видеоларингоскопа — прибора, которым врач видит дыхательные пути пациента при интубации. Цена ошибки высокая, требования к приёмке формальные.</p>
 
             <h4>✅ Результат:</h4>
             <ul>
-                <li>Контракт <strong>800 000 ₽</strong>, приёмка по <strong>всем 11 критериям</strong>.</li>
-                <li>Загрузка устройства оптимизирована с <strong>20 секунд до 4,5</strong> — критично, когда прибор берут в руки в неотложной ситуации.</li>
-                <li>Запись видео, работа с камерой, интерфейс под управление в перчатках.</li>
+                <li>Контракт <strong>800 000 ₽</strong>, успешная сдача и приёмка по <strong>всем 11 критериям</strong>.</li>
+                <li>Холодная загрузка устройства оптимизирована с <strong>20 секунд до 4,5 с</strong> — критично в экстренной реанимационной ситуации.</li>
+                <li>Захват видеопотока 60 FPS без просадок, работа с камерой, интерфейс под управление в медицинских перчатках.</li>
             </ul>
 
             <h4>🛠 Технологии:</h4>
-            <p>Qt/C++, embedded Linux, работа с видеопотоком.</p>
+            <p>Qt/C++, Embedded Linux, V4L2/GStreamer видеопайплайн, systemd optimization.</p>
         `,
         desc_en: `
-            <p><strong>Role:</strong> device software development under a commercial contract.</p>
-            <p>Software for a medical video laryngoscope — the device a doctor uses to see a patient's airway during intubation. High cost of error, formal acceptance requirements.</p>
+            <p><strong>Role:</strong> system and application software development under a commercial hardware contract.</p>
+            <p>Software for a medical video laryngoscope — the device a doctor uses to visualize a patient's airway during emergency intubation. High cost of error, strict formal acceptance criteria.</p>
 
             <h4>✅ Outcome:</h4>
             <ul>
-                <li><strong>₽800,000 contract</strong>, accepted on <strong>all 11 criteria</strong>.</li>
-                <li>Device boot time optimised from <strong>20 seconds to 4.5</strong> — critical when the device is picked up in an emergency.</li>
-                <li>Video capture, camera handling, UI designed for gloved operation.</li>
+                <li><strong>₽800,000 contract</strong>, formally accepted on <strong>all 11/11 criteria</strong>.</li>
+                <li>Device cold boot time optimized from <strong>20 seconds down to 4.5s</strong> — critical when picked up in an emergency.</li>
+                <li>Zero-drop 60 FPS video capture, camera pipeline, and touch UI engineered for gloved operation.</li>
             </ul>
 
             <h4>🛠 Stack:</h4>
-            <p>Qt/C++, embedded Linux, video pipeline.</p>
+            <p>Qt/C++, Embedded Linux, V4L2/GStreamer video pipeline, systemd boot optimization.</p>
         `,
         links: []
     },
@@ -146,7 +279,7 @@ export const projectsData = {
         title_en: "Slime Catcher - Farm Idle RPG",
         year: "Август 2025",
         year_en: "August 2025",
-        priority: true,
+        priority: false,
         tags: ["Unity 6", "Zenject", "AI", "Economy"],
         tags_en: ["Unity 6", "Zenject", "AI", "Economy"],
         desc: `
@@ -189,7 +322,7 @@ export const projectsData = {
         title_en: "D&D Offline Session System",
         year: "Январь 2025",
         year_en: "January 2025",
-        priority: true,
+        priority: false,
         tags: ["Desktop", "Unity", "Zenject"],
         tags_en: ["Desktop", "Unity", "Zenject"],
         desc: `
@@ -220,7 +353,7 @@ export const projectsData = {
         title_en: "Guilds UP!",
         year: "2024",
         year_en: "2024",
-        priority: true,
+        priority: false,
         tags: ["Strategy", "Turn-based", "Unity"],
         tags_en: ["Strategy", "Turn-based", "Unity"],
         desc: "Разработка пошаговой стратегической игры Guilds UP! Сложные механики боя, экономика и система прогрессии.",
@@ -232,7 +365,7 @@ export const projectsData = {
         title_en: "Museum AI Experience",
         year: "2024",
         year_en: "2024",
-        priority: true,
+        priority: false,
         tags: ["AI", "FaceSwap", "Museums"],
         tags_en: ["AI", "FaceSwap", "Museums"],
         desc: "Разработка проектов с заменой лиц и генерацией образов для музеев. Интерактивные ИИ-инсталляции, создающие уникальный пользовательский опыт.",
@@ -244,7 +377,7 @@ export const projectsData = {
         title_en: "Drone Assembly Simulator",
         year: "Март 2024",
         year_en: "March 2024",
-        priority: true,
+        priority: false,
         tags: ["B2B", "Education", "3D"],
         tags_en: ["B2B", "Education", "3D"],
         desc: `

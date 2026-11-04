@@ -29,6 +29,18 @@
         "2-architecture.jpg",
         "3-fleet.jpg"
     ],
+    "kesha_brain": [
+        "1-architecture.svg"
+    ],
+    "mcp_ecosystem": [
+        "1-ecosystem.svg"
+    ],
+    "ai_infra_oss": [
+        "1-oss.svg"
+    ],
+    "sensar": [
+        "1-device.svg"
+    ],
     "polus": [
         "image25.jpg",
         "image26.jpg",

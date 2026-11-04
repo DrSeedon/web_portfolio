@@ -1,0 +1,25 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="450" fill="#0d111a"/>
+  <text x="400" y="42" text-anchor="middle" fill="#e2e8f0" font-family="Inter, sans-serif" font-size="22" font-weight="800">Open-Source AI Infrastructure &amp; Core Contributions</text>
+  <rect x="55" y="75" width="330" height="130" rx="14" fill="#161b26" stroke="#34d399" stroke-width="2"/>
+  <text x="220" y="108" text-anchor="middle" fill="#34d399" font-family="JetBrains Mono, monospace" font-size="16" font-weight="700">openai/codex Core</text>
+  <text x="220" y="135" text-anchor="middle" fill="#e2e8f0" font-family="Inter, sans-serif" font-size="13">PR #30781 · Issue #40362</text>
+  <text x="220" y="160" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12">Thread Forking, Context Windowing</text>
+  <text x="220" y="182" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12">&amp; Multi-Agent Runtime Fixes</text>
+  <rect x="415" y="75" width="330" height="130" rx="14" fill="#161b26" stroke="#818cf8" stroke-width="2"/>
+  <text x="580" y="108" text-anchor="middle" fill="#818cf8" font-family="JetBrains Mono, monospace" font-size="16" font-weight="700">DrSeedon/Aperant</text>
+  <text x="580" y="135" text-anchor="middle" fill="#e2e8f0" font-family="Inter, sans-serif" font-size="13">Autonomous Coding Framework</text>
+  <text x="580" y="160" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12">Multi-Session Agentic Dev</text>
+  <text x="580" y="182" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12">+ claude-server Remote Daemon</text>
+  <rect x="55" y="230" width="330" height="130" rx="14" fill="#161b26" stroke="#f59e0b" stroke-width="2"/>
+  <text x="220" y="263" text-anchor="middle" fill="#f59e0b" font-family="JetBrains Mono, monospace" font-size="15" font-weight="700">Claude-Code-Game-Master</text>
+  <text x="220" y="290" text-anchor="middle" fill="#e2e8f0" font-family="Inter, sans-serif" font-size="13">Stateful Narrative &amp; World Engine</text>
+  <text x="220" y="315" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12">Long-Horizon Memory Graph,</text>
+  <text x="220" y="337" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12">Rule Enforcement &amp; State Sync</text>
+  <rect x="415" y="230" width="330" height="130" rx="14" fill="#161b26" stroke="#38bdf8" stroke-width="2"/>
+  <text x="580" y="263" text-anchor="middle" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="15" font-weight="700">VoiceType + Hedgehog VPN</text>
+  <text x="580" y="290" text-anchor="middle" fill="#e2e8f0" font-family="Inter, sans-serif" font-size="13">AI Voice Input &amp; Automated SaaS</text>
+  <text x="580" y="315" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12">Zero-Latency Speech-to-Action</text>
+  <text x="580" y="337" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12">&amp; Self-Service VLESS/Xray Provisioning</text>
+  <text x="400" y="408" text-anchor="middle" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="12">Open-Source Repositories · github.com/DrSeedon</text>
+</svg>

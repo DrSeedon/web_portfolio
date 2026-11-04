@@ -213,6 +213,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
 .project-link {
@@ -238,7 +240,95 @@
     z-index: 5;
 }
 
-.portfolio-footer { margin-top: 4rem; text-align: center; }
+.portfolio-footer { margin-top: 3rem; text-align: center; }
+
+/* GitHub Open-Source Ecosystem Grid */
+.repos-showcase {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.repos-showcase-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.repos-showcase-header h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.repos-showcase-header p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
+.repos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.repo-pill {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding: 1.15rem 1.35rem;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: all 0.25s ease;
+}
+
+.repo-pill:hover {
+    background: rgba(124, 58, 237, 0.08);
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.14);
+}
+
+.repo-pill-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.repo-pill-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.repo-pill-name i {
+    width: 16px;
+    height: 16px;
+}
+
+.repo-pill-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 6px;
+    background: rgba(0, 242, 254, 0.08);
+    color: var(--secondary);
+    border: 1px solid rgba(0, 242, 254, 0.18);
+}
+
+.repo-pill-desc {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.4;
+}
 
 /* Stack Interactive */
 .stack-interactive {

@@ -45,7 +45,7 @@ export function setupCursor() {
     });
     
     const addHover = () => {
-        document.querySelectorAll('.btn, .project-card, .comp-card, .timeline-item').forEach(el => {
+        document.querySelectorAll('.btn, .project-card, .comp-card, .timeline-item, .repo-pill').forEach(el => {
             el.addEventListener('mouseenter', () => {
                 if(glow) glow.style.transform = 'translate(-50%, -50%) scale(1.5)';
             });
@@ -137,9 +137,27 @@ function gatherResumeData() {
         resume += `> ${proj.year} - ${title} [${tags}]\n`;
         resume += `  ${cleanDesc.replace(/\n/g, '\n  ')}\n\n`;
     });
+
+    // Open-Source GitHub Repositories
+    resume += `\n[ OPEN-SOURCE GITHUB REPOSITORIES ]\n`;
+    resume += `• Orchestra (Multi-Agent AI Orchestrator): https://github.com/DrSeedon/orchestra\n`;
+    resume += `• Kesha (24/7 Executive Second Brain): https://github.com/DrSeedon/kesha-tg-bot\n`;
+    resume += `• OpenAI Codex Core PR #30781: https://github.com/openai/codex/pull/30781\n`;
+    resume += `• YouGile CRM MCP Server (39 tools): https://github.com/DrSeedon/yougile-mcp\n`;
+    resume += `• Yandex.Direct AdTech MCP Server: https://github.com/DrSeedon/yandex-direct-mcp\n`;
+    resume += `• Mail.ru Corporate IMAP/SMTP MCP: https://github.com/DrSeedon/mailru-mcp\n`;
+    resume += `• Multi-Engine WebSearch MCP: https://github.com/DrSeedon/mcp-websearch\n`;
+    resume += `• Enterprise GPB MCP Server: https://github.com/DrSeedon/gpb-mcp\n`;
+    resume += `• Aperant (Autonomous Coding Framework): https://github.com/DrSeedon/Aperant\n`;
+    resume += `• Claude Server (Remote Runtime Daemon): https://github.com/DrSeedon/claude-server\n`;
+    resume += `• Claude-Code-Game-Master (Stateful Memory Engine): https://github.com/DrSeedon/Claude-Code-Game-Master\n`;
+    resume += `• VoiceType (AI Voice Input Pipeline): https://github.com/DrSeedon/VoiceType\n`;
+    resume += `• Hedgehog VPN (Automated SaaS): https://github.com/DrSeedon/hedgehog-vpn\n`;
     
     // Contacts
     resume += `\n[ CONTACTS ]\n`;
+    resume += `Company & Cases: https://seedon.ru\n`;
+    resume += `Portfolio: https://drseedon.github.io/web_portfolio/\n`;
     resume += `Telegram: https://t.me/DrSeedon\n`;
     resume += `GitHub: https://github.com/DrSeedon\n`;
     resume += `Email: maxim2000as@gmail.com\n`;

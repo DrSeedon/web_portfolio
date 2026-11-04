@@ -1,0 +1,18 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="450" fill="#0d111a"/>
+  <text x="400" y="48" text-anchor="middle" fill="#e2e8f0" font-family="Inter, sans-serif" font-size="22" font-weight="800">Sensar — Medical Video Laryngoscope OS</text>
+  <rect x="80" y="85" width="640" height="270" rx="16" fill="#161b26" stroke="#38bdf8" stroke-width="2"/>
+  <rect x="115" y="120" width="180" height="90" rx="10" fill="#1e293b" stroke="#34d399" stroke-width="1.8"/>
+  <text x="205" y="158" text-anchor="middle" fill="#34d399" font-family="JetBrains Mono, monospace" font-size="22" font-weight="800">20s → 4.5s</text>
+  <text x="205" y="185" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12">Emergency Cold Boot</text>
+  <rect x="310" y="120" width="180" height="90" rx="10" fill="#1e293b" stroke="#818cf8" stroke-width="1.8"/>
+  <text x="400" y="158" text-anchor="middle" fill="#818cf8" font-family="JetBrains Mono, monospace" font-size="22" font-weight="800">11 / 11</text>
+  <text x="400" y="185" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12">Formal Acceptance Criteria</text>
+  <rect x="505" y="120" width="180" height="90" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="1.8"/>
+  <text x="595" y="158" text-anchor="middle" fill="#f59e0b" font-family="JetBrains Mono, monospace" font-size="22" font-weight="800">60 FPS</text>
+  <text x="595" y="185" text-anchor="middle" fill="#94a3b8" font-family="Inter, sans-serif" font-size="12">Zero-Drop Video Pipeline</text>
+  <rect x="115" y="235" width="570" height="85" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="400" y="268" text-anchor="middle" fill="#e2e8f0" font-family="Inter, sans-serif" font-size="14" font-weight="700">Embedded Linux · Qt / C++ · V4L2 / GStreamer · Gloved Medical UI</text>
+  <text x="400" y="295" text-anchor="middle" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="12">Commercial Hardware Contract (₽800,000) · Delivered &amp; Accepted in Production</text>
+  <text x="400" y="405" text-anchor="middle" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="12">High-Reliability Embedded Systems · 2026</text>
+</svg>
