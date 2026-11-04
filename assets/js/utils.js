@@ -142,8 +142,8 @@ function gatherResumeData() {
     resume += `\n[ CONTACTS ]\n`;
     resume += `Telegram: https://t.me/DrSeedon\n`;
     resume += `GitHub: https://github.com/DrSeedon\n`;
-    resume += `Email: maxim-as@bk.ru\n`;
-    resume += `LinkedIn: https://www.linkedin.com/in/максим-астраханцев-13a9391b9/\n`;
+    resume += `Email: maxim2000as@gmail.com\n`;
+    resume += `LinkedIn: https://www.linkedin.com/in/maxim-astrakhantsev-13a9391b9\n`;
     
     return resume;
 }
