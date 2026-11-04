@@ -5,6 +5,11 @@ export const translations = {
         nav_competencies: "Навыки",
         nav_portfolio: "Портфолио",
         
+        banner_badge: "Основная работа — на seedon.ru",
+        banner_title: "Все продукты и кейсы — на seedon.ru",
+        banner_text: "B2B AI-продукты, Orchestra ADE (100+ AI-агентов в проде), кейсы и вся работа компании — на сайте seedon.ru. Ниже — моя личная страница: обо мне, опыт и портфолио.",
+        banner_cta: "Перейти на seedon.ru",
+        
         hero_badge: "AI Engineer | Мультиагентные системы, LLM, MCP",
         hero_name: "Максим <span class=\"highlight\">Астраханцев</span>",
         hero_subtitle: "Строю production-системы на LLM: агентные платформы, интеграции, контроль качества и стоимости. До AI — 6 лет Unity, VR/AR и промышленного софта. Автор Orchestra: 556 сессий агентов на 21 проекте.",
@@ -74,7 +79,7 @@ export const translations = {
         copy_success: "Скопировано!",
         stack_title: "🛠️ Технологический стек",
         close: "Закрыть",
-        page_title: "Максим Астраханцев | Senior Unity Developer & AI Engineer",
+        page_title: "Максим Астраханцев — AI Agent Engineer | Основатель seedon.ru",
         share: "Поделиться",
         share_success: "Ссылка скопирована!"
     },
@@ -83,6 +88,11 @@ export const translations = {
         nav_experience: "Experience",
         nav_competencies: "Skills",
         nav_portfolio: "Portfolio",
+        
+        banner_badge: "Main work lives on seedon.ru",
+        banner_title: "All products and case studies — on seedon.ru",
+        banner_text: "B2B AI products, Orchestra ADE (100+ AI agents in production), case studies and all company work live on seedon.ru. Below is my personal page: about me, experience and portfolio.",
+        banner_cta: "Go to seedon.ru",
         
         hero_badge: "AI Engineer | Multi-Agent Systems, LLM, MCP",
         hero_name: "Maxim <span class=\"highlight\">Astrakhantsev</span>",
@@ -134,8 +144,6 @@ export const translations = {
         skill_vr_desc: "6 years: mobile games, VR headsets, tablet AR, Kinect installations, Zenject.",
         skill_pub_title: "Game Design",
         skill_pub_desc: "Economy, F2P monetization, ROAS/CPI/retention metrics, Google Play releases.",
-        skill_flutter_title: "Flutter & Mobile",
-        skill_flutter_desc: "Cross-platform development with Flutter, experience with iOS and WebGL.",
         skill_ind_title: "Industrial Software",
         skill_ind_desc: "Medical devices, UAV training simulators, calculation software, interactive kiosks.",
         skill_crypto_title: "Crypto",
@@ -155,7 +163,7 @@ export const translations = {
         copy_success: "Copied!",    
         stack_title: "🛠️ Tech Stack",
         close: "Close",
-        page_title: "Maxim Astrakhantsev | Senior Unity Developer & AI Engineer",
+        page_title: "Maxim Astrakhantsev — AI Agent Engineer | Founder of seedon.ru",
         share: "Share",
         share_success: "Link copied!"
     }

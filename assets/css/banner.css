@@ -1,0 +1,118 @@
+/* Banner: main work moved to seedon.ru */
+.moved-banner {
+    position: relative;
+    z-index: 1;
+    padding-top: calc(var(--nav-height) + 1.5rem);
+}
+
+/* hero already reserves space for the fixed nav; with the banner above it that gap is not needed */
+.moved-banner + .hero {
+    min-height: calc(100vh - var(--nav-height));
+    padding-top: 2rem;
+}
+
+.moved-banner-card {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    padding: 1.75rem 2rem;
+    background:
+        linear-gradient(135deg, rgba(124, 58, 237, 0.18), rgba(0, 242, 254, 0.08)),
+        var(--card-bg);
+    border: 1px solid rgba(124, 58, 237, 0.45);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px -20px var(--accent-glow), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.moved-banner-icon {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: rgba(124, 58, 237, 0.18);
+    border: 1px solid rgba(124, 58, 237, 0.4);
+    color: var(--secondary);
+}
+
+.moved-banner-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.moved-banner-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.moved-banner-badge {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--secondary);
+}
+
+.moved-banner-title {
+    margin: 0 0 0.4rem;
+    text-align: left;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.moved-banner-text {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-dim);
+}
+
+.moved-banner-cta {
+    flex: 0 0 auto;
+    padding: 1rem 1.75rem;
+    white-space: nowrap;
+}
+
+.moved-banner-cta svg {
+    width: 18px;
+    height: 18px;
+}
+
+footer p a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+footer p a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+    .moved-banner + .hero {
+        min-height: 0;
+        padding: 2rem 0 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .moved-banner-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+        padding: 1.5rem;
+    }
+
+    .moved-banner-title {
+        font-size: 1.25rem;
+    }
+
+    .moved-banner-cta {
+        width: 100%;
+    }
+}
