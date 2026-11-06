@@ -196,44 +196,46 @@ export const projectsData = {
         ]
     },
     ai_infra_oss: {
-        title: "Open-Source AI Инфраструктура: Codex, Aperant, VoiceType",
-        title_en: "Open-Source AI Infrastructure: Codex, Aperant, VoiceType",
+        title: "Open-Source AI Инфраструктура: T3 Code, Codex, Aperant, VoiceType",
+        title_en: "Open-Source AI Infrastructure: T3 Code, Codex, Aperant, VoiceType",
         year: "2025 — 2026",
         year_en: "2025 — 2026",
         priority: true,
-        tags: ["OpenAI Codex", "Autonomous Dev", "Voice AI", "SaaS", "Open Source"],
-        tags_en: ["OpenAI Codex", "Autonomous Dev", "Voice AI", "SaaS", "Open Source"],
+        tags: ["T3 Code (Merged)", "OpenAI Codex", "Autonomous Dev", "Voice AI", "Open Source"],
+        tags_en: ["T3 Code (Merged)", "OpenAI Codex", "Autonomous Dev", "Voice AI", "Open Source"],
         desc: `
-            <p><strong>Роль:</strong> контрибьютор в ядро агентных рантаймов и автор open-source инструментов автоматизации.</p>
+            <p><strong>Роль:</strong> официальный контрибьютор в ядро агентных рантаймов и автор open-source инструментов автоматизации.</p>
             <p>Помимо основных платформ, разрабатываю открытые инфраструктурные решения для автономного программирования, управления удалёнными рантаймами, голосового ввода и долгосрочной памяти агентов.</p>
 
             <h4>🚀 Ключевые репозитории и контрибуции:</h4>
             <ul>
-                <li><strong>Контрибуции в <a href="https://github.com/openai/codex/pull/30781" target="_blank">openai/codex (PR #30781, Issue #40362)</a>:</strong> исправления и улучшения в ядре агентного CLI OpenAI Codex (ветвление тредов, управление окном контекста и параллельными сессиями).</li>
+                <li><strong>Вмерженный PR в ядро <a href="https://github.com/pingdotgg/t3code/pull/30781" target="_blank">pingdotgg/t3code (#30781 — MERGED)</a>:</strong> включил режим мультиагентной оркестрации Ultracode для Claude Sonnet 5.5 и Haiku 5.5 (вмержен в <code>main</code> главным мейнтейнером Julius Marminge, коммит <code>4bfb896</code>).</li>
+                <li><strong>Исследование и Rust-патч для <a href="https://github.com/openai/codex/issues/40362" target="_blank">openai/codex (Issue #40362)</a>:</strong> воспроизведение, замер (23 МБ JSONL-строка) и патч с unit-тестом для ограничения переполнения буфера stdio в <code>thread/resume</code>.</li>
                 <li><strong><a href="https://github.com/DrSeedon/Aperant" target="_blank">DrSeedon/Aperant</a> и <a href="https://github.com/DrSeedon/claude-server" target="_blank">DrSeedon/claude-server</a>:</strong> фреймворк автономной мульти-сессионной разработки и HTTP/SSE-сервер для удалённого управления агентными рантаймами на VPS.</li>
-                <li><strong><a href="https://github.com/DrSeedon/Claude-Code-Game-Master" target="_blank">DrSeedon/Claude-Code-Game-Master</a>:</strong> движок управления состоянием сложного мира и долгосрочной памятью на базе Claude Code (проверка правил, граф событий, синхронизация).</li>
+                <li><strong><a href="https://github.com/DrSeedon/Claude-Code-Game-Master" target="_blank">DrSeedon/Claude-Code-Game-Master</a>:</strong> движок управления состоянием сложного мира и долгосрочной памятью на базе Claude Code (проверка правил, граф событий, синхронизация, вмержен upstream <a href="https://github.com/Sstobo/Claude-Code-Game-Master/pull/2" target="_blank">PR #2</a>).</li>
                 <li><strong><a href="https://github.com/DrSeedon/VoiceType" target="_blank">DrSeedon/VoiceType</a>:</strong> десктопная система мгновенного голосового ввода и транскрибации с ИИ-постобработкой текста для ускорения работы инженера и руководителя.</li>
                 <li><strong><a href="https://github.com/DrSeedon/hedgehog-vpn" target="_blank">DrSeedon/hedgehog-vpn</a>:</strong> полностью автоматизированный SaaS-сервис (VLESS/Xray, автовыдача ключей, биллинг, мониторинг узлов).</li>
             </ul>
         `,
         desc_en: `
-            <p><strong>Role:</strong> contributor to core agentic runtimes and author of open-source developer &amp; automation tools.</p>
+            <p><strong>Role:</strong> official contributor to core agentic runtimes and author of open-source developer &amp; automation tools.</p>
             <p>Alongside flagship platforms, I build open-source infrastructure for autonomous coding, remote runtime daemons, low-latency voice input, and stateful long-horizon agent memory.</p>
 
             <h4>🚀 Key Repositories &amp; Core Contributions:</h4>
             <ul>
-                <li><strong>Core contributions to <a href="https://github.com/openai/codex/pull/30781" target="_blank">openai/codex (PR #30781, Issue #40362)</a>:</strong> runtime fixes and enhancements for thread forking, context window management, and multi-agent stability.</li>
+                <li><strong>Merged core PR to <a href="https://github.com/pingdotgg/t3code/pull/30781" target="_blank">pingdotgg/t3code (#30781 — MERGED)</a>:</strong> exposed Ultracode multi-agent workflow orchestration on Claude Sonnet 5.5 and Haiku 5.5 (merged into <code>main</code> by lead maintainer Julius Marminge, commit <code>4bfb896</code>).</li>
+                <li><strong>Core bug reproduction &amp; Rust patch for <a href="https://github.com/openai/codex/issues/40362" target="_blank">openai/codex (Issue #40362)</a>:</strong> diagnosed and measured a 23 MB unbounded JSONL response in <code>thread/resume</code> and authored a Rust patch + unit test.</li>
                 <li><strong><a href="https://github.com/DrSeedon/Aperant" target="_blank">DrSeedon/Aperant</a> &amp; <a href="https://github.com/DrSeedon/claude-server" target="_blank">DrSeedon/claude-server</a>:</strong> autonomous multi-session coding framework and HTTP/SSE daemon for orchestrating remote Claude Code instances on VPS clusters.</li>
-                <li><strong><a href="https://github.com/DrSeedon/Claude-Code-Game-Master" target="_blank">DrSeedon/Claude-Code-Game-Master</a>:</strong> stateful narrative &amp; world-simulation engine testing long-horizon LLM memory, rule enforcement, and entity state graphs.</li>
+                <li><strong><a href="https://github.com/DrSeedon/Claude-Code-Game-Master" target="_blank">DrSeedon/Claude-Code-Game-Master</a>:</strong> stateful narrative &amp; world-simulation engine testing long-horizon LLM memory, rule enforcement, and entity state graphs (upstream <a href="https://github.com/Sstobo/Claude-Code-Game-Master/pull/2" target="_blank">PR #2</a> merged).</li>
                 <li><strong><a href="https://github.com/DrSeedon/VoiceType" target="_blank">DrSeedon/VoiceType</a>:</strong> instant AI voice-to-text desktop pipeline with LLM post-processing for high-speed engineering and executive dictation.</li>
                 <li><strong><a href="https://github.com/DrSeedon/hedgehog-vpn" target="_blank">DrSeedon/hedgehog-vpn</a>:</strong> end-to-end automated SaaS service (VLESS/Xray node orchestration, automated billing, key provisioning).</li>
             </ul>
         `,
         links: [
+            { text: "T3 Code PR #30781 (Merged)", url: "https://github.com/pingdotgg/t3code/pull/30781", icon: "git-merge" },
+            { text: "Codex Issue #40362", url: "https://github.com/openai/codex/issues/40362", icon: "git-pull-request" },
             { text: "Aperant", url: "https://github.com/DrSeedon/Aperant", icon: "github" },
-            { text: "claude-server", url: "https://github.com/DrSeedon/claude-server", icon: "github" },
-            { text: "VoiceType", url: "https://github.com/DrSeedon/VoiceType", icon: "github" },
-            { text: "Codex PR", url: "https://github.com/openai/codex/pull/30781", icon: "git-pull-request" }
+            { text: "VoiceType", url: "https://github.com/DrSeedon/VoiceType", icon: "github" }
         ]
     },
     sensar: {

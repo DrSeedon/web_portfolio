@@ -142,7 +142,8 @@ function gatherResumeData() {
     resume += `\n[ OPEN-SOURCE GITHUB REPOSITORIES ]\n`;
     resume += `• Orchestra (Multi-Agent AI Orchestrator): https://github.com/DrSeedon/orchestra\n`;
     resume += `• Kesha (24/7 Executive Second Brain): https://github.com/DrSeedon/kesha-tg-bot\n`;
-    resume += `• OpenAI Codex Core PR #30781: https://github.com/openai/codex/pull/30781\n`;
+    resume += `• T3 Code Core PR #30781 (Merged into main): https://github.com/pingdotgg/t3code/pull/30781\n`;
+    resume += `• OpenAI Codex Issue #40362 (23MB JSONL repro & Rust patch): https://github.com/openai/codex/issues/40362\n`;
     resume += `• YouGile CRM MCP Server (39 tools): https://github.com/DrSeedon/yougile-mcp\n`;
     resume += `• Yandex.Direct AdTech MCP Server: https://github.com/DrSeedon/yandex-direct-mcp\n`;
     resume += `• Mail.ru Corporate IMAP/SMTP MCP: https://github.com/DrSeedon/mailru-mcp\n`;
