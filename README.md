@@ -12,8 +12,7 @@ All commercial B2B AI products, **Orchestra ADE**, and enterprise case studies l
 
 - **[DrSeedon/orchestra](https://github.com/DrSeedon/orchestra)** — Multi-Agent AI Orchestrator (`4` runtimes, `18` models, `git worktree` isolation, `46` tools, `2,600+` automated tests)
 - **[DrSeedon/kesha-tg-bot](https://github.com/DrSeedon/kesha-tg-bot)** — 24/7 Executive Second Brain & AI OS (Hybrid RAG `bge-m3` + SQLite `FTS5`, `45+` modules, `1,700+` tests)
-- **[pingdotgg/t3code #30781](https://github.com/pingdotgg/t3code/pull/30781)** *(Merged into `main`)* — `feat(claude): expose Ultracode on Claude Sonnet 5.5 and Haiku 5.5` (merged by `@juliusmarminge`, commit `4bfb896`)
-- **[openai/codex #40362](https://github.com/openai/codex/issues/40362)** — Diagnosed, measured (23 MB JSONL line), and wrote a Rust patch + unit test for unbounded `thread/resume` responses in OpenAI Codex CLI app-server
+- **[pingdotgg/t3code](https://github.com/pingdotgg/t3code)** & **[openai/codex](https://github.com/openai/codex)** — Official contributor to core multi-agent orchestration harnesses & CLI runtimes
 - **[DrSeedon/yougile-mcp](https://github.com/DrSeedon/yougile-mcp)** — Production MCP Server for YouGile CRM & project tracker (`39` tools)
 - **[DrSeedon/yandex-direct-mcp](https://github.com/DrSeedon/yandex-direct-mcp)** — Yandex.Direct API v5 AdTech MCP Server
 - **[DrSeedon/mailru-mcp](https://github.com/DrSeedon/mailru-mcp)** — Corporate IMAP/SMTP Email MCP Server (`15` tools)

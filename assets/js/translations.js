@@ -24,7 +24,7 @@ export const translations = {
         int_vr_title: "CEO Second Brain Architect",
         int_vr_desc: "Персональные AI-операционки для фаундеров: гибридный RAG, память без галлюцинаций, голос и CRM.",
         int_ai_title: "LLM & MCP Infrastructure",
-        int_ai_desc: "10+ собственных MCP-серверов, контрибьютор в ядро T3 Code (#30781 Merged) и OpenAI Codex (#40362), 4 300+ тестов.",
+        int_ai_desc: "10+ собственных MCP-серверов, контрибьютор в ядро T3 Code и OpenAI Codex, Python/FastAPI, 4 300+ тестов.",
         int_fs_title: "GameDev & Content Factory",
         int_fs_desc: "6 лет в Unity, F2P-аналитике (Adjust, AppMetrica) и автоматизации контент-конвейеров.",
         
@@ -110,7 +110,7 @@ export const translations = {
         int_vr_title: "CEO Second Brain Architect",
         int_vr_desc: "24/7 Executive AI OS: hybrid RAG + knowledge graphs, zero-hallucination memory, voice & CRM actions.",
         int_ai_title: "LLM & MCP Infrastructure",
-        int_ai_desc: "10+ custom MCP servers, T3 Code (#30781 Merged) & OpenAI Codex (#40362) contributor, 4,300+ automated tests.",
+        int_ai_desc: "10+ custom MCP servers, T3 Code & OpenAI Codex contributor, Python/FastAPI, 4,300+ automated tests.",
         int_fs_title: "Mobile & Content Factory",
         int_fs_desc: "6 years in Unity, F2P economy simulation, Adjust/AppMetrica analytics, and automated media pipelines.",
         
